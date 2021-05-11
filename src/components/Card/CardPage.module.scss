@@ -1,0 +1,73 @@
+@import '../../styles/abstract/colors';
+
+.CardPage {
+  // display: flex;
+  // flex-direction: column;
+  // align-items: center;
+  display: grid;
+  grid-template-columns: 15% 1fr 20%;
+  align-items: center;
+  & > * {
+    grid-column: 2/3;
+  }
+}
+
+.BackBtn {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin: 1.5rem 0;
+  span {
+    margin-left: .5rem;
+    cursor: pointer;
+    border-bottom: 2px solid $color-primary;
+  }
+  i {
+    font-size: 1.2rem;
+  }
+}
+
+.MainSection {
+  display: flex;
+}
+
+.TextContainer {
+  margin-left: 2rem;
+
+  h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+
+  .TextInfo {
+    margin: 1.5rem 0;
+    h5 {
+      font-size: 1.1rem;
+      margin-bottom: .5rem;
+      i {
+        font-size: 1rem;
+        margin-right: .7rem;
+      }
+    }
+  }
+}
+
+.ImgContainer {
+  position: relative;
+  width: 37.5rem;
+  // height: 22.8rem;
+}
+
+.Tabs {
+  margin-top: 2rem;
+}
+
+.Tab {
+  font-weight: bold;
+  font-size: 1.1rem;
+  opacity: 46%;
+  transition: opacity 0.4s ease-in-out !important;
+  margin-right: 2rem;
+  &:focus {
+    box-shadow: none !important;
+  }
+}

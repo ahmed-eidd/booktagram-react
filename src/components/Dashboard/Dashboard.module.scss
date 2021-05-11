@@ -1,0 +1,18 @@
+@use '../../styles/abstract/colors' as clr;
+
+.Dashboard {
+
+}
+
+.Sidebar {
+  position: fixed;
+  height: 100vh;
+  width: 260px;
+  background-color: clr.$color-primary;
+}
+
+.Content {
+  width: calc(100% - 260px); /* from 200px to 260 */
+  margin-left: auto;
+
+}

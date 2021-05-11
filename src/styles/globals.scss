@@ -1,0 +1,48 @@
+@import './abstract/colors';
+@import './abstract/typography';
+@import './abstract/breakpoints';
+
+html,
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+* {
+}
+
+html {
+  box-sizing: border-box;
+  // font-size: 62.5%;
+}
+@media only screen and (max-width: 1377px) {
+  html {
+    font-size: 87% !important;
+  }
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: $font-primary !important;
+ 
+  // font-family: sans-serif;
+  font-size: 14px;
+  background-color: $color-secondary !important;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.Toastify__toast--success {
+  border-radius: 0 !important;
+}

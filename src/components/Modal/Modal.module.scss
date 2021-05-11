@@ -1,0 +1,42 @@
+@import '../../styles/abstract/colors';
+
+.Modal {
+  border-radius: 0.8rem;
+  width: auto;
+}
+
+.ModalCloseBtn {
+  background-color: $color-primary;
+  border-radius: 500px !important;
+  z-index: 10;
+  svg {
+    color: white !important;
+  }
+}
+
+.ModalBody {
+  position: relative;
+}
+
+.ModalChildren {
+  opacity: 1;
+}
+
+.ModalChildrenLoading {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.ModalSpinner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+}
+
+.ModalSpinnerLoading {
+  opacity: 1;
+}
+
+

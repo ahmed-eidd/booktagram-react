@@ -1,0 +1,15 @@
+
+.Tabs {
+  margin-top: 2rem;
+}
+
+.Tab {
+  font-weight: bold;
+  font-size: 1.1rem;
+  opacity: 46%;
+  transition: opacity 0.4s ease-in-out !important;
+  margin-right: 2rem;
+  &:focus {
+    box-shadow: none !important;
+  }
+}

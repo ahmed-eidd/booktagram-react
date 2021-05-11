@@ -1,0 +1,81 @@
+@import '../../styles/abstract/colors';
+
+.Container {
+  padding: 1rem 1.5rem;
+
+  h4 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    margin: 1rem 0;
+  }
+  h5 {
+    font-size: 1.1rem;
+    font-weight: bold;
+  }
+}
+
+.ModalBtn {
+  color: #165adc;
+  cursor: pointer;
+  margin-left: 0.5rem;
+  display: inline;
+}
+
+.Divider {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 2rem 0;
+  &::after,
+  &::before {
+    content: '';
+    flex: 1;
+    border-bottom: 2px solid $color-primary;
+    content: '';
+    height: 5px;
+  }
+  &:not(:empty)::before {
+    margin-right: 1.25em;
+  }
+
+  &:not(:empty)::after {
+    margin-left: 1.25em;
+  }
+}
+
+.Icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  i {
+    font-size: 1.5rem;
+    background-color: $color-primary;
+    color: white;
+    padding: 0.5rem 0.6rem;
+    border-radius: 500px;
+    &:first-child {
+      padding: 0.5rem 0.8rem !important;
+      margin-right: 0.5rem;
+    }
+    &:nth-child(2) {
+      margin-left: 0.5rem;
+    }
+  }
+}
+
+.TwoInput {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-column-gap: 0.5rem;
+  margin-bottom: -1.5rem;
+}
+
+.Btn {
+  margin: auto;
+}
+
+.Checked {
+  margin-bottom: 1.5rem;
+}

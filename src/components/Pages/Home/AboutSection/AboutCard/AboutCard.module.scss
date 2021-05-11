@@ -1,0 +1,34 @@
+@import '../../../../../styles/abstract/colors';
+
+.CardContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  width: 14.375rem;
+  margin-bottom: 3rem;
+
+  h4 {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin: 1.2rem 0;
+  }
+
+  p {
+    font-size: 1rem;
+    text-align: center;
+    padding: 0 1.5rem;
+    line-height: 1.7;
+  }
+}
+
+.IconContainer {
+  background-color: $color-primary;
+  border-radius: 50%;
+  padding: 2rem 2rem;
+
+  i {
+    color: #ffffff !important;
+    font-size: 2.5rem;
+  }
+}
