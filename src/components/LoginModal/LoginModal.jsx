@@ -57,7 +57,7 @@ const LoginModal = ({ tab, open, close }) => {
         // validationSchema={signInSchema}
         initialValues={signInSchema.cast()}
         onSubmit={(values) => {
-          dispatch(loginUser());
+          dispatch(loginUser(values));
           console.log(values);
         }}
       >
@@ -104,19 +104,7 @@ const LoginModal = ({ tab, open, close }) => {
         // validationSchema={signUpSchema}
         initialValues={signUpSchema.cast()}
         onSubmit={(values) => {
-          // console.log(values);
           dispatch(signUpUser(values))
-          // firebase
-          //   .auth()
-          //   .createUserWithEmailAndPassword()
-          //   .then((response) => {
-          //     toast({
-          //       position: 'top-right',
-          //       status: 'success',
-          //       title: 'Log in success',
-          //       isClosable: true,
-          //     });
-          //   });
         }}
       >
         {() => (

@@ -14,47 +14,67 @@ import firebase from 'firebase';
 import { getFirebase } from 'react-redux-firebase';
 import { createStandaloneToast } from '@chakra-ui/react';
 import Cookies from 'js-cookie';
-import { toastFail, toastSuccess } from '../../utilities/Toast'
-
+import { toastFail, toastSuccess } from '../../utilities/Toast';
+import {push} from 'connected-react-router';
 
 // const firebase = getFirebase();
-const toast = createStandaloneToast();
 
-function* loginSaga({ payload }, getstate) {
-  console.log('auth-saga', firebase); 
+const redirect = (path) => {
+  push(path)
+}
+
+function* loginSaga({ payload }) {
+  const auth = firebase.auth();
+  try {
+    const result = yield call(
+      [auth, auth.signInWithEmailAndPassword],
+      payload.email,
+      payload.password
+    );
+    yield put(push('/success'))
+    yield put(loginUserSuccess());
+    toastSuccess('Log in Success');
+  } catch (error) {
+    yield put(loginUserFail());
+    console.log(error);
+    toastFail('error');
+  }
 }
 
 function* signUpSaga({ payload }) {
-  console.log('signUp Payload', payload);
+  const auth = firebase.auth();
   try {
-    const auth = firebase.auth();
     const result = yield call(
       [auth, auth.createUserWithEmailAndPassword],
       payload.email,
       payload.password
     );
     const user = firebase.auth().currentUser;
-    yield call([user,user.updateProfile], {displayName: `${payload.firstName} ${payload.lastName}`}) 
-         console.log(user);
+    yield call([user, user.updateProfile], {
+      displayName: `${payload.firstName} ${payload.lastName}`,
+    });
+    console.log(user);
+    yield put(push('/success'))
     yield put(signUpUserSuccess());
-    toastSuccess('Sign Up Success')
-    console.log(result)
+    toastSuccess('Sign Up Success');
+    console.log(result);
     // Cookies.set('token', )
   } catch (error) {
     yield put(signUpUserFail());
-    toastFail(`Sign Up Fail ${error}`)
+    toastFail(`Sign Up Fail ${error}`);
   }
 }
 
 function* signOutSaga() {
   try {
     const ref = firebase.auth();
-    yield call([ref, ref.signOut])
-    toastSuccess('Log Out Success, Bye!')
-    yield put(signOutSuccess())
-  } catch(error) {
+    yield call([ref, ref.signOut]);
+    yield put(push('/'))
+    toastSuccess('Log Out Success, Bye!');
+    yield put(signOutSuccess());
+  } catch (error) {
     toastFail(error);
-    yield put(signOutFail())
+    yield put(signOutFail());
   }
 }
 

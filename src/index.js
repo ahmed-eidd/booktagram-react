@@ -7,13 +7,12 @@ import { Provider } from 'react-redux';
 import { IntlProvider } from 'react-intl';
 import { ChakraProvider, extendTheme } from '@chakra-ui/react';
 import * as locales from './content/locale/';
-import store from './service/configureStore';
-// import { ToastContainer, toast } from 'react-toastify';
-// import 'react-toastify/dist/ReactToastify.css';
+import store, { history } from './service/configureStore';
+import { ConnectedRouter } from 'connected-react-router';
 import firebase from 'firebase/app';
-import { ReactReduxFirebaseProvider,get } from 'react-redux-firebase';
+import { ReactReduxFirebaseProvider, get } from 'react-redux-firebase';
 import { BrowserRouter } from 'react-router-dom';
-import 'firebase/firestore'
+import 'firebase/firestore';
 import 'firebase/auth';
 
 const language = navigator.language.split(/[-_]/)[0];
@@ -69,45 +68,23 @@ const theme = extendTheme({
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
-      <ReactReduxFirebaseProvider {...rrfProps}>
-        <ChakraProvider theme={theme}>
-          <IntlProvider
-            locale={language}
-            // defaultLocale={defaultLocale}
-            messages={locales[language]}
-          >
-            <BrowserRouter>
-              <App />
-            </BrowserRouter>
-            {/* <ToastContainer /> */}
-          </IntlProvider>
-        </ChakraProvider>
-      </ReactReduxFirebaseProvider>
+      <ConnectedRouter history={history}>
+        {/* <BrowserRouter> */}
+          <ReactReduxFirebaseProvider {...rrfProps}>
+            <ChakraProvider theme={theme}>
+              <IntlProvider
+                locale={language}
+                // defaultLocale={defaultLocale}
+                messages={locales[language]}
+              >
+                <App />
+                {/* <ToastContainer /> */}
+              </IntlProvider>
+            </ChakraProvider>
+          </ReactReduxFirebaseProvider>{' '}
+        {/* </BrowserRouter> */}
+      </ConnectedRouter>
     </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );
-
-//   return (
-//     <>
-// <Provider store={store}>
-//   <ReactReduxFirebaseProvider {...rrfProps}>
-//     <ChakraProvider theme={theme}>
-//       <IntlProvider
-//         locale={locale}
-//         defaultLocale={defaultLocale}
-//         messages={locales[locale]}
-//       >
-//         <Component {...pageProps} />
-//         <ToastContainer />
-//       </IntlProvider>
-//     </ChakraProvider>
-//   </ReactReduxFirebaseProvider>
-// </Provider>
-//     </>
-//   );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-// reportWebVitals();

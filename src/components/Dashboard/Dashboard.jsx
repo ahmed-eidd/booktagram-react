@@ -6,13 +6,10 @@ import { fetchGallery } from '../../store/gallery/slice'
 
 const Dashboard = ({children}) => {
   const dispatch = useDispatch();
-  const gallery = useSelector((state) => state.gallery.items )
-  // useEffect(() => {
-  // dispatch(fetchGallery());   
-  // }, []) 
+
   return (
     <div className={classes.Dashboard}>
-        {/* {gallery.map((el) => <div>{el.id}</div> )} */}
+    
       <div className={classes.Sidebar}></div>
       <div className={classes.Content}>{children}</div>
     </div>
@@ -22,7 +19,7 @@ const Dashboard = ({children}) => {
 export default Dashboard;
 
 
-// 
+ 
 
 
 // import React from 'react'

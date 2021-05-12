@@ -14,7 +14,9 @@ export const authSlice = createSlice({
       state.items = { ...action.payload };
       state.loading = false;
     },
-    loginUserFail: (state, action) => {},
+    loginUserFail: (state, action) => {
+      state.loading = false
+    },
     signUpUser: (state, action) => {
       state.loading = true;
     },
