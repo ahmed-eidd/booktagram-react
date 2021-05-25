@@ -1,4 +1,4 @@
-import { fork, put } from 'redux-saga/effects';
+import { fork } from 'redux-saga/effects';
 import gallerySaga from '../store/gallery/saga';
 import newsSaga from '../store/news/saga';
 import authSaga from '../store/auth/saga';

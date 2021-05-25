@@ -14,6 +14,7 @@ const Card = ({ subTitle, title, text, btn }) => {
       <div className={classes.CardImg}>
         <img
         src={Img}
+        alt='card img'
         />
       </div>
       <div className={classes.CardInfo}>

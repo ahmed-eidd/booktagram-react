@@ -4,7 +4,6 @@ import {
   TabList,
   TabPanels,
   Tab,
-  TabPanel,
 } from '@chakra-ui/react';
 import classes from './Tabs.module.scss';
 

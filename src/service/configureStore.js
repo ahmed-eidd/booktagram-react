@@ -1,6 +1,5 @@
 import { configureStore, getDefaultMiddleware } from '@reduxjs/toolkit';
 import createSagaMiddleware from 'redux-saga';
-import { gallerySlice } from '../store/gallery/slice';
 import rootReducer from './rootReducer';
 import rootSaga from './rootSaga';
 import { createBrowserHistory } from 'history';

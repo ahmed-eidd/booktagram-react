@@ -1,6 +1,5 @@
 import React from 'react';
 import { Form } from 'formik';
-import { Container } from '@chakra-ui/react';
 import classes from './FormGroup.module.scss'
 
 const FormGroup = ({ children, title }) => {

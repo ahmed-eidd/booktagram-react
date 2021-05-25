@@ -8,7 +8,6 @@
   border-radius: 8px;
 }
 
-
 .ImgContainer {
   position: relative;
   // min-width: 23.3rem;
@@ -16,6 +15,23 @@
 
   min-width: 30.3rem;
   height: 23rem;
+  img {
+    visibility: inherit;
+    position: absolute;
+    inset: 0px;
+    box-sizing: border-box;
+    padding: 0px;
+    border: none;
+    margin: auto;
+    display: block;
+    width: 0px;
+    height: 0px;
+    min-width: 100%;
+    max-width: 100%;
+    min-height: 100%;
+    max-height: 100%;
+    object-fit: cover;
+  }
 }
 
 

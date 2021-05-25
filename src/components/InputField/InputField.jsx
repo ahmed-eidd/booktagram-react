@@ -1,17 +1,15 @@
-import React,{useState} from 'react';
+import React from 'react';
 import { useField } from 'formik';
 import {
   FormControl,
   FormLabel,
   FormErrorMessage,
-  FormHelperText,
   Input,
 } from '@chakra-ui/react';
 import classes from './InputField.module.scss';
 
 const InputField = ({ label, placeholder, type, ...props }) => {
   const [field, { error, touched,  }] = useField(props);
-  const [focus, setFocus] = useState(false)
 
   return (
     // <>

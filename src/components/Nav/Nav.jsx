@@ -5,7 +5,6 @@ import { useIntl } from 'react-intl';
 
 import { Select } from '@chakra-ui/react';
 import Button from '../Button/Button';
-import Modal from '../Modal/Modal';
 import LoginModal from '../LoginModal/LoginModal';
 
 const Nav = () => {

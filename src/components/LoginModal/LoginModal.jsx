@@ -12,12 +12,26 @@ import { useDispatch, useSelector } from 'react-redux';
 import classes from './LoginModal.module.scss';
 import { useFirebase } from 'react-redux-firebase';
 import { useToast } from '@chakra-ui/react';
+// import {useToastFail, useToastSuccess} from '../../utilities/useToast';
 
 const LoginModal = ({ tab, open, close }) => {
   const toast = useToast();
 
   const firebase = useFirebase();
-  
+  const createNewUser = ({ email, password, firstName, lastName }) => {
+    firebase
+      .createUser({ email, password }, { email, firstName, lastName })
+      .then(() => {
+        toast({
+          position: 'top-right',
+          status: 'success',
+          title: 'Sign up Success',
+          isClosable: true,
+        });
+      })
+      .catch((err) => console.log(err));
+  };
+
   const loginWithGoogle = () => {
     return firebase.login({ provider: 'google', type: 'popup' });
   };
@@ -58,7 +72,7 @@ const LoginModal = ({ tab, open, close }) => {
         initialValues={signInSchema.cast()}
         onSubmit={(values) => {
           dispatch(loginUser(values));
-          console.log(values);
+          console.log('submit');
         }}
       >
         {() => (
@@ -104,7 +118,14 @@ const LoginModal = ({ tab, open, close }) => {
         // validationSchema={signUpSchema}
         initialValues={signUpSchema.cast()}
         onSubmit={(values) => {
-          dispatch(signUpUser(values))
+          // dispatch(signUpUser(values))
+          createNewUser({
+            email: values.email,
+            password: values.password,
+            firstName: values.firstName,
+            lastName: values.lastName,
+          });
+          console.log('new user ');
         }}
       >
         {() => (

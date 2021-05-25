@@ -11,9 +11,7 @@ const Header = () => {
     <section className={classes.Header}>
       <img
         src={HeaderImg}
-        // width={700}
-        // height={500}
-        // layout="intrinsic"
+        alt='background'
       />
       {/* <Image src='/assests/Backgroud-1.png' width={1080} height={600} layout='intrinsic' /> */}
       <div className={classes.HeaderText}>

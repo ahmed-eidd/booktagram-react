@@ -1,22 +1,15 @@
 import React from 'react'
-import WideCard from '../../components/Card/WideCards/WideCard';
-import Layout from '../../components/Layout/Layout';
-import { Grid } from "@chakra-ui/react";
+import {Switch, Route} from 'react-router-dom';
+import GuideList from './GuideList'
+import Guide from './Guide';
 
 const index = () => {
   return (
-    <Layout> 
-      <Grid gridTemplateColumns='repeat(auto-fit, 72.5rem)' gridRowGap='3rem' justifyContent='center' >
-
-        <WideCard />
-        <WideCard />
-        <WideCard />
-        <WideCard />
-        <WideCard />
-        <WideCard />
-      </Grid>
-    </Layout>
+    <Switch>
+      <Route path='/guide' exact component={GuideList} />
+      <Route path='/guide/:id' exact component={Guide} />
+    </Switch>
   )
 }
 
-export default index;
+export default index

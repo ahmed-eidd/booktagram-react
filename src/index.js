@@ -10,10 +10,15 @@ import * as locales from './content/locale/';
 import store, { history } from './service/configureStore';
 import { ConnectedRouter } from 'connected-react-router';
 import firebase from 'firebase/app';
-import { ReactReduxFirebaseProvider, get } from 'react-redux-firebase';
-import { BrowserRouter } from 'react-router-dom';
+import { ReactReduxFirebaseProvider } from 'react-redux-firebase';
+import {createFirestoreInstance} from 'redux-firestore'
 import 'firebase/firestore';
 import 'firebase/auth';
+
+
+
+
+
 
 const language = navigator.language.split(/[-_]/)[0];
 
@@ -25,19 +30,18 @@ const fbconfing = {
   messagingSenderId: '1041639497306',
   appId: '1:1041639497306:web:504683d81bae6df8f10263',
   measurementId: 'G-FN3XP1DL6W',
-  // apiKey: process.env.NEXT_PUBLIC_apiKey,
-  // authDomain:process.env.NEXT_PUBLIC_authDomain,
-  // projectId: process.env.NEXT_PUBLIC_projectId,
-  // storageBucket: process.env.NEXT_PUBLIC_storageBucket,
-  // messagingSenderId: process.env.NEXT_PUBLIC_messagingSenderId,
-  // appId:process.env.NEXT_PUBLIC_appId,
-  // measurementId: process.env.NEXT_PUBLIC_measurementId,
+  // apiKey: process.env.REACT_APP_apiKey,
+  // authDomain:process.env.REACT_APP_authDomain,
+  // projectId: process.env.REACT_APP_projectId,
+  // storageBucket: process.env.REACT_APP_storageBucket,
+  // messagingSenderId: process.env.REACT_APP_messagingSenderId,
+  // appId:process.env.REACT_APP_appId,
+  // measurementId: process.env.REACT_APP_measurementId,
 };
 
-console.log('firebase', fbconfing);
 
 const rrfConfing = {
-  userProfie: 'users',
+  userProfile: 'users',
   useFirestoreForProfile: true,
 };
 
@@ -53,6 +57,7 @@ const rrfProps = {
   firebase,
   config: rrfConfing,
   dispatch: store.dispatch,
+  createFirestoreInstance
 };
 
 const theme = extendTheme({

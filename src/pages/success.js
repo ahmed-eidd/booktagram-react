@@ -5,14 +5,14 @@ import {signOut} from '../store/auth/slice';
 
 const Success = () => {
   const dispatch = useDispatch();
-  const auth = useSelector((state) => state.firebase.auth);
+  const auth = useSelector((state) => state.firebase.profile);
   const onLogOutHandler = () => {
     dispatch(signOut());
   }
   return (
     <div>
       <Button onClick={onLogOutHandler} >Log Out</Button> 
-      <h1>{auth.displayName}</h1>
+      <h1>{auth.firstName + ' ' + auth.lastName}</h1>
     </div>
   )
 }

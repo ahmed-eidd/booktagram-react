@@ -11,19 +11,15 @@ import {
   signOut,
 } from './slice';
 import firebase from 'firebase';
-import { getFirebase } from 'react-redux-firebase';
-import { createStandaloneToast } from '@chakra-ui/react';
 import Cookies from 'js-cookie';
 import { toastFail, toastSuccess } from '../../utilities/Toast';
 import {push} from 'connected-react-router';
 
 // const firebase = getFirebase();
 
-const redirect = (path) => {
-  push(path)
-}
 
 function* loginSaga({ payload }) {
+
   const auth = firebase.auth();
   try {
     const result = yield call(
@@ -32,6 +28,7 @@ function* loginSaga({ payload }) {
       payload.password
     );
     yield put(push('/success'))
+    console.log(result)
     yield put(loginUserSuccess());
     toastSuccess('Log in Success');
   } catch (error) {
@@ -53,7 +50,6 @@ function* signUpSaga({ payload }) {
     yield call([user, user.updateProfile], {
       displayName: `${payload.firstName} ${payload.lastName}`,
     });
-    console.log(user);
     yield put(push('/success'))
     yield put(signUpUserSuccess());
     toastSuccess('Sign Up Success');

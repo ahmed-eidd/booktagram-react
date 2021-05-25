@@ -3,12 +3,8 @@ import {
   Modal as ChakraModal,
   ModalOverlay,
   ModalContent,
-  ModalHeader,
-  ModalFooter,
   ModalBody,
   ModalCloseButton,
-  useDisclosure,
-  Button,
   Spinner
 } from "@chakra-ui/react"
 import classes from './Modal.module.scss';
@@ -16,7 +12,6 @@ import classes from './Modal.module.scss';
 
 
 const Modal = ({isOpen, onOpen, onClose, children, loading}) => {
-  // const {  onOpen, onClose } = useDisclosure();
   const ModalClasses = [classes.ModalChildren, loading ? classes.ModalChildrenLoading : null].join(' ')
 
   const SpinnerClasses = [classes.ModalSpinner, loading ? classes.ModalSpinnerLoading : null ].join(' ')
@@ -35,12 +30,7 @@ const Modal = ({isOpen, onOpen, onClose, children, loading}) => {
 />
           </ModalBody>
 
-          {/* <ModalFooter>
-            <Button colorScheme="blue" mr={3} onClick={onClose}>
-              Close
-            </Button>
-            <Button variant="ghost">Secondary Action</Button>
-          </ModalFooter> */}
+       
         </ModalContent>
       </ChakraModal>
 

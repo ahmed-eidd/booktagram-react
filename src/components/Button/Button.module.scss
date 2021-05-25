@@ -4,7 +4,7 @@
   overflow: hidden;
   padding: 0.3rem 0.9rem;
   background-color: $color-primary;
-  color: white;
+  color: $font-color-primary;
   font-weight: 700;
   // margin: 0 auto;
   display: block;
@@ -25,7 +25,7 @@
   transition: background-color .4s, color .4s;
   &:hover {
     background-color: $color-primary;
-    color: white;
+    color: $font-color-primary;
   }
 }
 

@@ -13,11 +13,12 @@ const GroupCard = () => {
         <div className={classes.BgImg}>
           <img
             src={Background}
+            alt='logo'
           />
         </div>
 
         <div className={classes.ImgCircle}>
-          <img src={ProfileImg} />
+          <img src={ProfileImg} alt='profile img' />
         </div>
       </div>
       <h3 className={classes.Title}>Loerm Ipsum Book Club</h3>

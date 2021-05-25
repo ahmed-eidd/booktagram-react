@@ -1,7 +1,6 @@
 import {call, put, takeLatest} from 'redux-saga/effects';
 import {fetchNews,
 fetchNewsSuccess,fetchNewsFail} from './slice'
-import axios from 'axios';
 import * as api from './api'
 
 function* fetchNewsSaga ({payload}) {

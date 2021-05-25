@@ -1,7 +1,6 @@
-import {call, put, takeEvery, takeLatest} from 'redux-saga/effects';
+import {call, put,takeLatest} from 'redux-saga/effects';
 import {fetchGallery,
 fetchGallerySuccess,fetchGalleryFail} from './slice'
-import axios from 'axios';
 import * as api from './api'
 
 function* fetchGallerySaga ({payload}) {

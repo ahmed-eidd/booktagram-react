@@ -13,21 +13,27 @@ const Button = ({
   className,
   ...props
 }) => {
+  // css classes
   const btnClass =
     variant === 'outline'
       ? [classes.btn, classes.outline, className].join(' ')
       : [classes.btn, classes.filled, className].join(' ');
   return (
     <>
+      {/* If Button is a Link */}
+
       {type === 'link' && (
         <Link to={to} className={btnClass} onClick={onClick} style={style}>
           {isLoading ? (
-            <div className={classes.loader}>Loading...</div>
+       <div className={classes.loader}>Loading...</div>
           ) : (
             children
           )}
         </Link>
       )}
+
+      {/* if Button is an anchor */}
+
       {type !== 'link' && (
         <button
           onClick={onClick}

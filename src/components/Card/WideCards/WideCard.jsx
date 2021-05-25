@@ -2,6 +2,7 @@ import React from 'react';
 import classes from './WideCard.module.scss';
 
 
+
 const WideCard = () => {
   return (
     <div className={classes.WideCard}>

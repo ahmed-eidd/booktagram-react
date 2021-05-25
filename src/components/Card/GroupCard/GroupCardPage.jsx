@@ -15,10 +15,11 @@ const GroupCardPage = () => {
       <div className={classes.BgImgContainer}>
         <img
           src={Img}
+          alt='logo'
         />
       </div>
       <div className={classes.ClubImgContainer}>
-        <img src={ProfileImg} />
+        <img src={ProfileImg} alt='profile logo' />
       
       </div>
       <div className={classes.TextContainer}>

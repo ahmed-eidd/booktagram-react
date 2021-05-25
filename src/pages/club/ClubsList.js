@@ -1,7 +1,6 @@
 import { Grid } from '@chakra-ui/layout';
 import React from 'react';
 import GroupCard from '../../components/Card/GroupCard/GroupCard';
-import Layout from '../../components/Layout/Layout';
 
 const index = () => {
   return (

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import classes from './CardPage.module.scss';
 import Img from '../../assests/news/Background.jpg';
 import {useHistory} from 'react-router-dom'
@@ -7,13 +7,6 @@ import {useHistory} from 'react-router-dom'
 import Tabs from '../Tabs/Tabs';
 
 const CardPage = () => {
-  const tabs = ['Speakers', 'Details', 'Orgnaizer'];
-  const tabSelected = {
-    opacity: '100% !important',
-    boxShadow: '0 !important',
-    borderBottom: '1px solid #21545F',
-    outline: 'none',
-  };
 
   const history = useHistory();
   const backBtnHandler = () => {
@@ -30,6 +23,7 @@ const CardPage = () => {
         <div className={classes.ImgContainer}>
           <img
             src={Img}
+            alt='card logo'
           />
         </div>
         <div className={classes.TextContainer}>
@@ -59,27 +53,6 @@ const CardPage = () => {
         </div>
       </div>
       <Tabs tabs={['Speakers', 'Details', 'Orgnaizer']} />
-      {/* <Tabs variant="unstyled" className={classes.Tabs}>
-        <TabList>
-          {tabs.map((el) => (
-            <Tab _selected={tabSelected} className={classes.Tab}>
-              {el}
-            </Tab>
-          ))}
-        </TabList>
-
-        <TabPanels>
-          <TabPanel>
-            <p>one!</p>
-          </TabPanel>
-          <TabPanel>
-            <p>two!</p>
-          </TabPanel>
-          <TabPanel>
-            <p>three!</p>
-          </TabPanel>
-        </TabPanels>
-      </Tabs> */}
     </div>
   );
 };

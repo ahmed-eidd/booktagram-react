@@ -1,26 +1,23 @@
-import React, { useEffect } from 'react'
+import React, { useEffect } from 'react';
 import classes from './Dashboard.module.scss';
-import { useSelector, useDispatch } from 'react-redux';
-import { isLoaded, isEmpty } from 'react-redux-firebase';
-import { fetchGallery } from '../../store/gallery/slice'
+import Sidebar from './Sidebar/Sidebar';
+import { useFirestoreConnect } from 'react-redux-firebase';
 
-const Dashboard = ({children}) => {
-  const dispatch = useDispatch();
-
+const Dashboard = ({ children }) => {
+  
+  useEffect(() => {}, []);
+  useFirestoreConnect([
+    { collection: 'clubs' }, // or 'todos'
+  ]);
   return (
     <div className={classes.Dashboard}>
-    
-      <div className={classes.Sidebar}></div>
+      <Sidebar />
       <div className={classes.Content}>{children}</div>
     </div>
-  )
-}
+  );
+};
 
 export default Dashboard;
-
-
- 
-
 
 // import React from 'react'
 // import {

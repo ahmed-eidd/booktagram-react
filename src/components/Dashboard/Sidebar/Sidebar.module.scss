@@ -1,0 +1,27 @@
+@import '../../../styles/abstract/colors';
+
+.Sidebar {
+  position: fixed;
+  height: 100vh;
+  width: 260px;
+  background-color: $color-primary;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  top: 0;
+}
+
+.DashList {
+  display: flex;
+  flex-direction: column;
+  color: $font-color-primary;
+}
+.Avatar {
+  color: $font-color-primary;
+  padding: 20px;
+  margin: 10px auto;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-weight: bold;
+  font-size: 1.2rem;
+}

@@ -1,24 +1,21 @@
-import React from 'react'
-import Layout from '../../components/Layout/Layout';
+import React from 'react';
 import CardsContainer from '../../components/Card/CardsContainer';
 import Card from '../../components/Card/Card';
 
 const events = () => {
   return (
-    <Layout>
-      <CardsContainer>
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-      </CardsContainer>
-    </Layout>
-  )
-}
+    <CardsContainer>
+      <Card />
+      <Card />
+      <Card />
+      <Card />
+      <Card />
+      <Card />
+      <Card />
+      <Card />
+      <Card />
+    </CardsContainer>
+  );
+};
 
 export default events;
