@@ -11,7 +11,11 @@ export const ar = {
   nav_signup: 'اشترك',
   nav_guide: 'دليل',
   nav_contactus: 'اتصل بيا',
-
+  nav_profile: 'الملف الشخصي',
+  nav_message: 'الرسائل',
+  nav_accountSetting: 'الاعدادت الشخصية',
+  nav_logout: 'تسجيل الخروج',
+  nav_mybooks: 'كتبي',
 
   // Home - About Section
   

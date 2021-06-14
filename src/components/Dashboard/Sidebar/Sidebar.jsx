@@ -13,23 +13,49 @@ const Sidebar = () => {
   const f = (id) => formatMessage({ id });
   return (
     <div className={classes.Sidebar}>
-      <div className={classes.Avatar}>{profile.firstName && profile.lastName ? profile.firstName + ' ' + profile.lastName : 'John Doe'}</div>
+      <div className={classes.Avatar}>
+        {profile.firstName && profile.lastName
+          ? profile.firstName + ' ' + profile.lastName
+          : 'John Doe'}
+      </div>
       <div className={classes.Links}>
         <ul className={classes.DashList}>
-          <SidebarItem to="/">{f('nav_home')}</SidebarItem>
-          <SidebarItem to="/news">{f('nav_news')}</SidebarItem>
-          <SidebarItem to="/events">{f('nav_events')}</SidebarItem>
-          <SidebarItem to="/shop">{f('nav_shop')}</SidebarItem>
-          <SidebarItem to="/clubs">{f('nav_club')}</SidebarItem>
-          <SidebarItem to="/guide">{f('nav_guide')}</SidebarItem>
-          <SidebarItem to="/about">{f('nav_about')}</SidebarItem>
-          <SidebarItem to="/contactus">{f('nav_contactus')}</SidebarItem>
-          <Button
-            style={{ margin: '15px auto', border: '1px solid white' }}
-            onClick={() => dispatch(signOut())}
-          >
-            Log Out
-          </Button>
+          <SidebarItem to="/" icon='fas fa-home'>
+            {f('nav_home')}
+          </SidebarItem>
+          <SidebarItem to="/profile" icon="fas fa-user">
+            {f('nav_profile')}
+          </SidebarItem>
+          <SidebarItem to="/mybooks" icon="fas fa-book">
+        
+            {f('nav_mybooks')}
+          </SidebarItem>
+          <SidebarItem to="/clubs" icon="fas fa-users">
+            {f('nav_club')}
+          </SidebarItem>
+          <SidebarItem to="/shop" icon="fas fa-shopping-cart">
+            {f('nav_shop')}
+          </SidebarItem>
+          <SidebarItem to="/events" icon="fas fa-calendar-day">
+            {f('nav_events')}
+          </SidebarItem>
+          <SidebarItem to="/guide" icon="fas fa-book-open">
+            {f('nav_guide')}
+          </SidebarItem>
+          <SidebarItem to="/news" icon="fas fa-newspaper">
+            {f('nav_news')}
+          </SidebarItem>
+          <SidebarItem to="/message" icon="far fa-envelope">
+            {f('nav_message')}
+          </SidebarItem>
+
+          <SidebarItem to="/accountsetting" icon="fas fa-cog">
+            {f('nav_accountSetting')}
+          </SidebarItem>
+          <SidebarItem to="/logout" icon="fas fa-sign-out-alt">
+            {f('nav_logout')}
+          </SidebarItem>
+         
         </ul>
       </div>
     </div>

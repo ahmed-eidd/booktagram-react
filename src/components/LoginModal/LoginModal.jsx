@@ -7,11 +7,12 @@ import InputField from '../InputField/InputField';
 import Modal from '../Modal/Modal';
 import * as yup from 'yup';
 import { Formik } from 'formik';
-import { loginUser, signUpUser } from '../../store/auth/slice';
+// import { loginUser, signUpUser } from '../../store/auth/slice';
 import { useDispatch, useSelector } from 'react-redux';
 import classes from './LoginModal.module.scss';
 import { useFirebase } from 'react-redux-firebase';
 import { useToast } from '@chakra-ui/react';
+import { loginUserAction } from '../../store/auth/action';
 // import {useToastFail, useToastSuccess} from '../../utilities/useToast';
 
 const LoginModal = ({ tab, open, close }) => {
@@ -71,7 +72,7 @@ const LoginModal = ({ tab, open, close }) => {
         // validationSchema={signInSchema}
         initialValues={signInSchema.cast()}
         onSubmit={(values) => {
-          dispatch(loginUser(values));
+          dispatch(loginUserAction(values));
           console.log('submit');
         }}
       >

@@ -1,13 +1,13 @@
 import React from 'react';
 import {useDispatch,useSelector} from 'react-redux'
 import Button from '../components/Button/Button';
-import {signOut} from '../store/auth/slice';
+// import {signOut} from '../store/auth/slice';
 
 const Success = () => {
   const dispatch = useDispatch();
   const auth = useSelector((state) => state.firebase.profile);
   const onLogOutHandler = () => {
-    dispatch(signOut());
+    // dispatch(signOut());
   }
   return (
     <div>

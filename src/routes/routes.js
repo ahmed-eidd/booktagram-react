@@ -9,6 +9,7 @@ import Dashboard from '../components/Dashboard/Dashboard.jsx';
 import Guide from '../pages/guide';
 import { useSelector } from 'react-redux';
 import { isLoaded, isEmpty } from 'react-redux-firebase';
+import Logout from '../components/Auth/Logout/Logout.jsx';
 
 const Routes = () => {
   const auth = useSelector((state) => state.firebase.auth);
@@ -23,7 +24,7 @@ const Routes = () => {
           <Route path="/events" component={Events} />
           <Route path='/guide' component={Guide} />
           <Route path="/success" component={Success} />
-
+          <Route path="/logout" component={Logout} />
           {/* <Route exact path='/club/:id' component={club} /> */}
         </Switch>
       </Wrapper>

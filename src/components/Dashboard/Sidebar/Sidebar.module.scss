@@ -3,12 +3,14 @@
 .Sidebar {
   position: fixed;
   height: 100vh;
-  width: 260px;
+  width: 350px;
   background-color: $color-primary;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   top: 0;
+  background-color: $color-secondary;
+  box-shadow: 0px 8px 10px #00000080;
 }
 
 .DashList {
@@ -17,7 +19,7 @@
   color: $font-color-primary;
 }
 .Avatar {
-  color: $font-color-primary;
+  color: $color-primary;
   padding: 20px;
   margin: 10px auto;
   text-transform: uppercase;

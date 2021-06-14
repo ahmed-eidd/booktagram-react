@@ -11,6 +11,11 @@ export const en = {
   nav_signup: 'Sign up',
   nav_guide: 'Guide',
   nav_contactus: 'Contant Us', 
+  nav_profile: 'Profile',
+  nav_message: 'Message',
+  nav_accountSetting: 'Account Settings',
+  nav_mybooks: 'My books',
+  nav_logout: 'Logout',
 
 
   // Home About Section 

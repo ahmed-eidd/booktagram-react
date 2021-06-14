@@ -1,13 +1,14 @@
 @import '../../styles/abstract/colors';
 
 .Dashboard {
-
+  width: 100%;
+  min-height: 100vh;
 }
 
 
 
 .Content {
-  width: calc(100% - 260px); /* from 200px to 260 */
+  width: calc(100% - 350px); /* from 260px to 350 */
   margin-left: auto;
   margin-top: 5rem;
 }

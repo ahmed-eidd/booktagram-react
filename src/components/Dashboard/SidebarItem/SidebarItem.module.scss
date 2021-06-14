@@ -3,15 +3,18 @@
 .DashItem {
   position: relative;
   margin-bottom: 0.3rem;
+  font-size: 21px;
   display: flex;
+  justify-content: center;
   align-items: center;
+  color: $color-primary;
   a {
     padding: 1rem 0;
     z-index: 5;
     position: relative;
     margin-left: 2.5rem;
     cursor: pointer;
-    width: 100%;
+    // width: 100%;
   }
 }
 
@@ -20,8 +23,9 @@
   position: absolute;
   content: '';
   display: block;
-  width: 100%;
+  width: 90%;
   height: 100%;
+  border-radius: 6px;
   transform: scaleX(0);
   transition: transform 0.4s ease-in-out;
   transform-origin: left;
@@ -29,20 +33,30 @@
 
 .DashItem:hover:before {
   transform: scaleX(1);
-  background-color: $color-secondary;
+  background-color: $color-primary;
 }
 
 .DashItem:hover a {
-  color: $color-primary;
+  color: $color-secondary;
   transition: color 0.3s ease-in-out;
+}
+
+.DashItem i {
+  z-index: 5;
+  transition: color 0.3s ease-in-out;
+}
+
+.DashItem:hover i {
+  color: $color-secondary;
 }
 
 .active {
   &::before {
-    background-color: $color-secondary;
+    background-color: $color-primary;
     transform: scaleX(1);
   }
-  a {
-    color: $color-primary;
+  a , i{
+    color: $color-secondary;
   }
+
 }

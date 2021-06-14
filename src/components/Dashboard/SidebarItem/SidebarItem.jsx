@@ -1,23 +1,33 @@
-import React from 'react'
+import React from 'react';
 import classes from './SidebarItem.module.scss';
-import { useSelector} from 'react-redux';
-import {NavLink} from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import { NavLink } from 'react-router-dom';
 import { useIntl } from 'react-intl';
 
-const SidebarItem = ({children,to}) => {
-  const pathname = useSelector((state) => state.router.location.pathname); 
+const SidebarItem = ({ children, to, icon }) => {
+  const pathname = useSelector((state) => state.router.location.pathname);
   let attachedClasses = [classes.DashItem].join('');
   if (pathname === to) {
-    attachedClasses = [classes.DashItem, classes.active].join(' ')
+    attachedClasses = [classes.DashItem, classes.active].join(' ');
   }
   const { formatMessage } = useIntl();
   const f = (id) => formatMessage({ id });
   return (
-  
-  <li className={attachedClasses}>
-    <NavLink to={to}>{children}</NavLink>
-  </li>    
-  )
-}
+    <li className={attachedClasses}>
+      {icon && <i className={icon}></i>}
 
-export default SidebarItem
+      <NavLink to={to}>
+        <span
+          style={{
+            display: 'inline-block',
+            width: '160px',
+          }}
+        >
+          {children}
+        </span>
+      </NavLink>
+    </li>
+  );
+};
+
+export default SidebarItem;

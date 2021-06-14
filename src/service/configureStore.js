@@ -1,4 +1,4 @@
-import { configureStore, getDefaultMiddleware } from '@reduxjs/toolkit';
+import { createStore, compose, applyMiddleware } from 'redux';
 import createSagaMiddleware from 'redux-saga';
 import rootReducer from './rootReducer';
 import rootSaga from './rootSaga';
@@ -7,30 +7,14 @@ import { routerMiddleware } from 'connected-react-router';
 
 export const history = createBrowserHistory();
 
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+
 let sagaMiddleware = createSagaMiddleware();
-const middleware = [
-  ...getDefaultMiddleware({ thunk: false, serializableCheck: false }),
-  routerMiddleware(history),
-  sagaMiddleware,
-];
+const store = createStore(
+  rootReducer(history),
+  composeEnhancers(applyMiddleware(routerMiddleware(history), sagaMiddleware))
+);
+sagaMiddleware.run(rootSaga);
 
-const configStore = (preloadedState = {}) => {
-  const store = configureStore({
-    reducer: rootReducer(history),
-    preloadedState,
-    middleware,
-  });
-  sagaMiddleware.run(rootSaga);
-  return store
-};
-
-// const store = (preloadedState = {}) =>
-//   configureStore({
-//     reducer: rootReducer(history),
-//     preloadedState,
-//     middleware,
-//   });
-
-const store = configStore()
 
 export default store;
