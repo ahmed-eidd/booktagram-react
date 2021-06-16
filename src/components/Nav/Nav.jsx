@@ -27,6 +27,7 @@ const Nav = () => {
 
   const onModalClose = () => {
     setModalOpen(false);
+    setTab('')
   };
 
   useEffect(() => {
@@ -125,14 +126,6 @@ const Nav = () => {
           style={{ border: 'none', fontWeight: 'bold' }}
           size="sm"
           width="auto"
-
-          // onChange={(e) => {
-          //   console.log(e.target.value);
-          //   const path = router.pathname;
-
-          //   router.push(`${lang}`);
-          //   // router.reload()
-          // }}
         >
           <option value="ar">AR</option>
           <option value="en">EN</option>

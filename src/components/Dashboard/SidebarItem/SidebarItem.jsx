@@ -6,8 +6,10 @@ import { useIntl } from 'react-intl';
 
 const SidebarItem = ({ children, to, icon }) => {
   const pathname = useSelector((state) => state.router.location.pathname);
+  const pathArr = pathname.split('/')
   let attachedClasses = [classes.DashItem].join('');
-  if (pathname === to) {
+  // if (pathname === to) {
+  if (!!pathArr.find(el => `/${el}` === to) || pathname === to) {
     attachedClasses = [classes.DashItem, classes.active].join(' ');
   }
   const { formatMessage } = useIntl();

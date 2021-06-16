@@ -9,9 +9,9 @@ import Img from '../../../assests/news/Background.jpg';
 import ProfileImg from '../../../assests/news/test.png';
 // import { TabPanel } from '@chakra-ui/react';
 
-const GroupCardPage = () => {
+const GroupCardPage = ({children}) => {
   return (
-    <Grid templateColumns="1fr repeat(8,minmax(min-content, 10rem)) 1fr">
+    <Grid templateColumns="1fr repeat(8,minmax(min-content, 14rem)) 1fr">
       <div className={classes.BgImgContainer}>
         <img
           src={Img}
@@ -35,15 +35,16 @@ const GroupCardPage = () => {
         </div>
       </div>
       <Button className={classes.JoinBtn}>Join This Club</Button>
+      {children}
       {/* <div className={classes.Tabs}>Tabs</div> */}
-      <Tabs
-        tabs={['Discussion', 'Currently reading', 'Rules']}
+      {/* <Tabs
+        tabs={['Discussion', 'Currently reading', 'Rules', 'Rules', 'Rules', 'Rules', 'Rules', 'Rules']}
         className={classes.Tabs}
       >
         <TabPanel>One</TabPanel>
         <TabPanel>Two</TabPanel>
         <TabPanel>Three</TabPanel>
-      </Tabs>
+      </Tabs> */}
     </Grid>
   );
 };

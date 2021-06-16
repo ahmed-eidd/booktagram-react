@@ -18,9 +18,9 @@ const Tabs = ({tabs = [], className = '', children}) => {
   };
   return (
     <CTabs  variant="unstyled" className={[classes.Tabs, className].join(' ')}>
-      <TabList>
+      <TabList className={classes.TabList}>
         {tabs?.map((el) => (
-          <Tab _selected={tabSelected} className={classes.Tab}>
+          <Tab _selected={tabSelected} className={classes.Tab} key={el}>
             {el}
           </Tab>
         ))}

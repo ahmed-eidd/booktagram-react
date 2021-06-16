@@ -1,6 +1,11 @@
-
 .Tabs {
   margin-top: 2rem;
+  grid-column: 3 / span 6;
+}
+
+.TabList {
+  justify-content: space-between;
+  margin-bottom: 2rem;
 }
 
 .Tab {
