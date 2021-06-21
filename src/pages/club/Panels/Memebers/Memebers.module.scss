@@ -1,0 +1,39 @@
+@import '../../../../styles/abstract/colors';
+@import '../../../../styles/mixins/mixins';
+
+.Memebers {
+  @include boxPad;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(17.5rem, 1fr));
+}
+.Memeber {
+  width: 17.5rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 1rem;
+  &__Img {
+    @include CircleAvatar(3.75rem);
+  }
+  &__Info {
+    margin-left: 1rem;
+  }
+  &__Name {
+    font-size: 1.1rem;
+    font-weight: bold;
+    display: inline-block;
+  }
+  &__Location {
+    font-size: 0.875rem;
+  }
+  &__Role {
+    font-weight: bold;
+  }
+  &__Setting {
+    display: inline-block;
+    cursor: pointer;
+  }
+  &__Date {
+
+  }
+}

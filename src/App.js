@@ -1,5 +1,5 @@
-import './App.css';
-import Routes from './routes/routes'
+import Routes from './routes/routes';
+import './styles/globals.scss';
 import { isLoaded  } from 'react-redux-firebase'
 import {useSelector} from 'react-redux';
 import SplashScreen from './components/SplashScreen/SplashScreen';

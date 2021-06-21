@@ -10,6 +10,7 @@
 
   .Rule {
     @include boxPad;
+ 
     margin-bottom: 1.5rem;
     font-size: 1.125rem;
     font-weight: bold;
@@ -29,11 +30,16 @@
       padding: 1rem;
       box-shadow: 0px 3px 6px #00000080;
       border-radius: 4px;
+      transform: scaleY(0);
+      transition: transform .4s ease-in-out;
 
       div {
         margin-bottom: 0.3rem;
         cursor: pointer;
       }
+    }
+    .ModalOpen {
+      transform: scaleY(1);
     }
   }
 }

@@ -2,8 +2,8 @@
 
 .btn {
   overflow: hidden;
-  padding: 0.3rem 0.9rem;
   background-color: $color-primary;
+  padding: 0.5rem 0.95rem;
   color: $font-color-primary;
   font-weight: 700;
   // margin: 0 auto;
@@ -22,7 +22,7 @@
   background-color: transparent;
   border: 1px solid $color-primary;
   color: $color-primary;
-  transition: background-color .4s, color .4s;
+  transition: background-color 0.4s, color 0.4s;
   &:hover {
     background-color: $color-primary;
     color: $font-color-primary;
@@ -30,9 +30,7 @@
 }
 
 .filled {
-
 }
-
 
 .loader {
   font-size: 10px;
@@ -42,11 +40,27 @@
   height: 20px;
   border-radius: 50%;
   background: #ffffff;
-  background: -moz-linear-gradient(left, #ffffff 10%, rgba(255, 255, 255, 0) 42%);
-  background: -webkit-linear-gradient(left, #ffffff 10%, rgba(255, 255, 255, 0) 42%);
+  background: -moz-linear-gradient(
+    left,
+    #ffffff 10%,
+    rgba(255, 255, 255, 0) 42%
+  );
+  background: -webkit-linear-gradient(
+    left,
+    #ffffff 10%,
+    rgba(255, 255, 255, 0) 42%
+  );
   background: -o-linear-gradient(left, #ffffff 10%, rgba(255, 255, 255, 0) 42%);
-  background: -ms-linear-gradient(left, #ffffff 10%, rgba(255, 255, 255, 0) 42%);
-  background: linear-gradient(to right, #ffffff 10%, rgba(255, 255, 255, 0) 42%);
+  background: -ms-linear-gradient(
+    left,
+    #ffffff 10%,
+    rgba(255, 255, 255, 0) 42%
+  );
+  background: linear-gradient(
+    to right,
+    #ffffff 10%,
+    rgba(255, 255, 255, 0) 42%
+  );
   position: relative;
   -webkit-animation: load3 1.4s infinite linear;
   animation: load3 1.4s infinite linear;

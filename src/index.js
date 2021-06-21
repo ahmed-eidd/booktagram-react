@@ -1,8 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
 import App from './App';
-import './styles/globals.scss';
 import { Provider } from 'react-redux';
 import { IntlProvider } from 'react-intl';
 import { ChakraProvider, extendTheme } from '@chakra-ui/react';

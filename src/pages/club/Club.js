@@ -5,6 +5,8 @@ import TabPanel from '../../components/Tabs/TabPanel/TabPanel';
 import Tabs from '../../components/Tabs/Tabs';
 import About from './Panels/About/About';
 import Rules from './Panels/Rules/Rules';
+import Discussion from './Panels/Discussion/Discussion';
+import Memebers from './Panels/Memebers/Memebers';
 
 const club = () => {
   const tabs = [
@@ -24,14 +26,19 @@ const club = () => {
         <TabPanel>
           <About />
         </TabPanel>
-        <TabPanel>Discussion</TabPanel>
+        <TabPanel>
+          <Discussion />
+        </TabPanel>
         <TabPanel>Polls</TabPanel>
         <TabPanel>Currnetly Reading</TabPanel>
         <TabPanel>Meetings</TabPanel>
-        <TabPanel >
+        <TabPanel>
           <Rules />
         </TabPanel>
-        <TabPanel>Memebers</TabPanel>
+        <TabPanel>
+          {' '}
+          <Memebers />{' '}
+        </TabPanel>
         <TabPanel>Pending</TabPanel>
         <TabPanel>Settings</TabPanel>
       </Tabs>

@@ -1,5 +1,6 @@
 @import '../../../styles/abstract/colors';
 @import '../../../styles/abstract/typography';
+@import '../../../styles/mixins/mixins';
 
 .GroupCard {
   position: relative;
@@ -32,12 +33,9 @@
 }
 
 .ImgCircle {
-  border-radius: 50%;
+  @include CircleAvatar(11rem);
   position: relative;
   position: absolute;
-  overflow: hidden;
-  width: 11rem;
-  height: 11rem;
   background-color: $color-secondary;
   top: 75%;
   left: 50%;

@@ -1,0 +1,33 @@
+@import '../../../../../styles/mixins/mixins';
+
+.Comment {
+  margin: 1.5rem 0;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  grid-column: 1/-1;
+
+  &__Avatar {
+    @include CircleAvatar(3.125rem);
+    margin-left: 0.9rem;
+  }
+  &__Content {
+    margin-left: 1.5rem;
+  }
+  &__Name {
+    font-size: 1rem;
+    font-weight: bold;
+  }
+  &__Text {
+    margin: .5rem 0;
+  }
+  &__Like {
+    display: inline-block;
+    margin-right: 1rem;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  &__Date {
+    display: inline-block;
+  }
+}

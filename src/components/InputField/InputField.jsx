@@ -9,28 +9,21 @@ import {
 import classes from './InputField.module.scss';
 
 const InputField = ({ label, placeholder, type, ...props }) => {
-  const [field, { error, touched,  }] = useField(props);
+  const [field, { error, touched }] = useField(props);
 
   return (
-    // <>
-    // <label htmlFor={field.name}>{label}</label>
-    // <input placeholder={placeholder} {...field} type={type}/>
-    // </>
     <FormControl
-      style={{ position: 'relative',marginTop:'1.5rem', marginBottom: '1.5rem' }}
+      style={{
+        position: 'relative',
+        marginTop: '1.5rem',
+        marginBottom: '1.5rem',
+      }}
       my={7}
       isInvalid={error && touched}
     >
       <FormLabel htmlFor={field.name}>{label}</FormLabel>
       <Input
         {...field}
-        // onFocusCapture={() => {
-        //   setFocus(true)
-        // }}
-        // onBlur={() => {
-        //   setFocus(false)
-        // }}
-
         id={field.name}
         type={type}
         placeholder={placeholder}

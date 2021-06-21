@@ -1,0 +1,82 @@
+@import '../../../../../styles/mixins/mixins';
+@import '../../../../../styles/abstract/colors';
+
+.Post {
+  @include boxPad;
+  display: grid;
+  grid-template-columns: 5rem 1fr;
+  column-gap: 0.5rem;
+  &__Img {
+    @include CircleAvatar(4.3rem);
+  }
+  &__User {
+    grid-column: 2/-1;
+    grid-row: 1/2;
+  }
+  &__Name {
+    grid-column: 2/-1;
+    font-size: 1.1rem;
+    font-weight: bold;
+  }
+  &__Date {
+    grid-column: 2/-1;
+  }
+  &__Settings {
+    grid-column: 2/-1;
+    grid-row: 1/2;
+    justify-self: end;
+  }
+  &__Content {
+    grid-column: 2/-1;
+    font-size: 1.1rem;
+    padding-right: 2rem;
+  }
+  &__LikesAndComments {
+    grid-column: 2/-1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+    margin: 1rem 0;
+  }
+  &__Likes {
+  }
+  &__Comments {
+  }
+  &__Comments,
+  &__Likes {
+    cursor: pointer;
+
+    position: relative;
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      background-color: $color-primary;
+      width: 100%;
+      height: 1px;
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.4s ease-in-out;
+    }
+    &:hover::after {
+      transform: scaleX(1);
+    }
+  }
+  &__WriteComment {
+    grid-column: 2/-1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__CommentAvatar {
+    @include CircleAvatar(3.125rem);
+    justify-self: center;
+    align-self: center;
+    
+  }
+  &__AllComments {
+    grid-column: 1/-1;
+  }
+}
