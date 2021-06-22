@@ -66,6 +66,10 @@ const theme = extendTheme({
       },
     },
   },
+  colors :{
+    colorPrimary: '#21545F',
+    colorSecondary: '#E7FAFC'
+  }
 });
 
 ReactDOM.render(

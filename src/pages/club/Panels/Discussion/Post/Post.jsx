@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import classes from './Post.module.scss';
 import Avatar from '../../../../../assests/avatar.jpg';
-import TextArea from '../../../../../components/TextArea/TextArea';
+import TextArea from '../../../../../components/Form/TextArea/TextArea';
 import Button from '../../../../../components/Button/Button';
-import { useFormik } from 'formik';
+import { Formik, useFormik } from 'formik';
 import Comment from '../Comment/Comment';
+import FormGroup from '../../../../../components/Form/FormGroup/FormGroup';
+import InputField from '../../../../../components/Form/InputField/InputField';
 
 const Post = () => {
   const [commentOpen, setCommentOpen] = useState(false);
@@ -55,20 +57,22 @@ const Post = () => {
       <div className={classes.Post__CommentAvatar}>
         <img src={Avatar} alt="avatar" />
       </div>
-      <form
-        onSubmit={handleSubmit}
-        className={classes.Post__WriteComment}
-        action=""
-      >
-        <TextArea
-          placeholder="Write a Reply..."
-          style={{ minHeight: '45px', width: '90%' }}
-          onChange={handleChange}
-          value={values.comment}
-          name="comment"
-        />
-        <Button type="submit">Reply</Button>
-      </form>
+      <Formik onSubmit={(values) => console.log(values)} initialValues={{
+        comment: ''
+      }}>
+        {() => (
+          <FormGroup formClassName={classes.Post__WriteComment}>
+            <InputField
+            style={{
+              width: '90%',
+            }}
+              placeholder="Write a Reply..."
+              name="comment"
+            />
+            <Button type="submit">Reply</Button>
+          </FormGroup>
+        )}
+      </Formik>
       {commentOpen && (
         <>
           <Comment />

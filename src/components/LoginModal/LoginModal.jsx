@@ -1,9 +1,9 @@
 // import { Checkbox } from '@chakra-ui/checkbox';
-import Checkbox from '../Checkbox/Checkbox';
+import Checkbox from '../Form/Checkbox/Checkbox';
 import React, { useEffect, useState } from 'react';
 import Button from '../Button/Button';
-import FormGroup from '../FormGroup/FormGroup';
-import InputField from '../InputField/InputField';
+import FormGroup from '../Form/FormGroup/FormGroup';
+import InputField from '../Form/InputField/InputField';
 import Modal from '../Modal/Modal';
 import * as yup from 'yup';
 import { Formik } from 'formik';
@@ -77,7 +77,7 @@ const LoginModal = ({ tab, open, close }) => {
         }}
       >
         {() => (
-          <FormGroup>
+          <FormGroup className={classes.Form} >
             <h4>Sign In</h4>
             <h5>
               New user?

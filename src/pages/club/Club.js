@@ -7,6 +7,8 @@ import About from './Panels/About/About';
 import Rules from './Panels/Rules/Rules';
 import Discussion from './Panels/Discussion/Discussion';
 import Memebers from './Panels/Memebers/Memebers';
+import Pending from './Panels/Pending/Pending';
+import Settings from './Panels/Settings/Settings';
 
 const club = () => {
   const tabs = [
@@ -36,11 +38,12 @@ const club = () => {
           <Rules />
         </TabPanel>
         <TabPanel>
-          {' '}
-          <Memebers />{' '}
+          <Memebers />
         </TabPanel>
-        <TabPanel>Pending</TabPanel>
-        <TabPanel>Settings</TabPanel>
+        <TabPanel>
+          <Pending />
+        </TabPanel>
+        <TabPanel><Settings /> </TabPanel>
       </Tabs>
     </GroupCardPage>
   );

@@ -1,0 +1,17 @@
+@import '../../../styles/abstract/colors' ;
+
+.container {
+
+  // margin: auto;
+  // display: flex;
+  // flex-direction: column;
+  // justify-content: center;
+  // align-items: center;
+}
+
+.title {
+  font-size: 1.6rem;
+  color: $color-primary;
+  font-weight: 700;
+  margin: 10px 0;
+}

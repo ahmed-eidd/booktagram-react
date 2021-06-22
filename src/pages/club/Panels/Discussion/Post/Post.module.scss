@@ -37,7 +37,7 @@
     justify-content: space-between;
     align-items: center;
     font-weight: bold;
-    margin: 1rem 0;
+    margin-top: 1rem;
   }
   &__Likes {
   }
@@ -69,12 +69,12 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin: 0;
   }
   &__CommentAvatar {
     @include CircleAvatar(3.125rem);
     justify-self: center;
     align-self: center;
-    
   }
   &__AllComments {
     grid-column: 1/-1;

@@ -1,39 +1,37 @@
-import { useFormik } from 'formik';
+import { Formik, useFormik } from 'formik';
 import React from 'react';
-import TextArea from '../../../../components/TextArea/TextArea';
+import TextArea from '../../../../components/Form/TextArea/TextArea';
 import classes from './Discussion.module.scss';
 import Button from '../../../../components/Button/Button';
+import FormGroup from '../../../../components/Form/FormGroup/FormGroup';
 import Post from './Post/Post';
 
 const Discussion = () => {
-  const formik = useFormik({
-    initialValues: {
-      post: '',
-    },
-    onSubmit: (values) => {
-      console.log(values);
-    },
-  });
-  const { initialValues, handleSubmit, values, handleChange } = formik;
   return (
     <div>
-      <form onSubmit={handleSubmit} className={classes.Discussion__WritePost}>
-        <TextArea
-          className={classes.Discussion__WritePost__Input}
-          name="post"
-          id="post"
-          placeholder="Write a Post"
-          type="text"
-          onChange={handleChange}
-          value={values.post}
-        />
-        <div className={classes.Discussion__WritePost__ActionBox}>
-          <Button type="submit">Post</Button>
-        </div>
-      </form>
+      <Formik
+        initialValues={{
+          post: '',
+        }}
+        onSubmit={(values) => console.log(values)}
+      >
+        {() => (
+          <FormGroup formClassName={classes.Discussion__WritePost}>
+            <TextArea
+              className={classes.Discussion__WritePost__Input}
+              name="post"
+              placeholder="Write a Post"
+              type="text"
+            />
+            <div className={classes.Discussion__WritePost__ActionBox}>
+              <Button type="submit">Post</Button>
+            </div>
+          </FormGroup>
+        )}
+      </Formik>
       <div className={classes.Discussion__Posts}>
         <h3 className={classes.Discussion__Posts__Title}>New Activity</h3>
-        <Post />        
+        <Post />
       </div>
     </div>
   );
