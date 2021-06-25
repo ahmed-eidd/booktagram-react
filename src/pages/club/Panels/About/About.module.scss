@@ -2,9 +2,7 @@
 
 .About {
   &__Title {
-    font-size: 1.125rem;
-    font-weight: bold;
-    margin-bottom: 1rem;
+    @include Title-h2(0,0,1rem,0);
   }
 
   &__Text__Container {

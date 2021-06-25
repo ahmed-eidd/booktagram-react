@@ -28,9 +28,11 @@ const InputField = ({
       label={label}
       labelStyle={labelStyle}
       field={field}
+      style={style}
     >
       <Input
         {...field}
+        
         id={field.name}
         type={type}
         placeholder={placeholder}

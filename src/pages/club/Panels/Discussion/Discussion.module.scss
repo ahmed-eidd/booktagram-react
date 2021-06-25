@@ -1,3 +1,5 @@
+@import '../../../../styles/mixins/mixins';
+
 .Discussion {
   &__WritePost {
     position: relative;
@@ -13,9 +15,7 @@
   }
   &__Posts {
     &__Title {
-      font-size: 1.1rem;
-      font-weight: bold;
-      margin: 2rem 0;
+      @include Title-h2(2rem, 0, 2rem, 0);
     }
   }
 }

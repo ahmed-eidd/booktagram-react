@@ -9,6 +9,7 @@ import Discussion from './Panels/Discussion/Discussion';
 import Memebers from './Panels/Memebers/Memebers';
 import Pending from './Panels/Pending/Pending';
 import Settings from './Panels/Settings/Settings';
+import CurrentlyReading from './Panels/CurrentlyReading/CurrentlyReading';
 
 const club = () => {
   const tabs = [
@@ -32,7 +33,7 @@ const club = () => {
           <Discussion />
         </TabPanel>
         <TabPanel>Polls</TabPanel>
-        <TabPanel>Currnetly Reading</TabPanel>
+        <TabPanel><CurrentlyReading/></TabPanel>
         <TabPanel>Meetings</TabPanel>
         <TabPanel>
           <Rules />
