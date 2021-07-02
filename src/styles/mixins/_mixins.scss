@@ -26,3 +26,11 @@
   font-weight: bold;
   margin: $mt $mr $mb $ml;
 }
+
+@mixin Flexing($justify, $align, $direction:row) {
+  display: flex;
+  flex-direction: column;
+  justify-content: $justify;
+  align-items: $align;
+  flex-direction: $direction;
+}

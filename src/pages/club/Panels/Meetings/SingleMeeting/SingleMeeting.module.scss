@@ -2,6 +2,35 @@
 
 .Meeting {
   @include boxPad;
+  @include Flexing(space-between, flex-start);
+  &__Cover {
+    margin-right: 1rem;
+    max-width: 13.125rem;
+    min-height: 17.5rem;
+    object-fit: cover;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
   &__Icon {
+  }
+  &__Info {
+    margin-right: auto;
+    width: 70%;
+
+    & > * {
+      margin-bottom: 1rem;
+    }
+    font-size: 1rem;
+    &__Title {
+      font-size: 1.3rem;
+      font-weight: bold;
+    }
+    &__Description {
+      letter-spacing: 0.48px;
+      line-height: 2;
+    }
   }
 }

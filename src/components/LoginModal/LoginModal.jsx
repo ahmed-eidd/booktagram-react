@@ -30,7 +30,15 @@ const LoginModal = ({ tab, open, close }) => {
           isClosable: true,
         });
       })
-      .catch((err) => console.log(err));
+      .catch((err) => {
+        toast({
+              position: 'top-right',
+          status: 'error',
+          title: err.message,
+          isClosable: true,
+          
+        })
+      });
   };
 
   const loginWithGoogle = () => {

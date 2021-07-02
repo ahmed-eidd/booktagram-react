@@ -5,14 +5,28 @@ import Avatar from '../../../../assests/avatar.jpg';
 const Pending = () => {
   const onApproveHandler = () => {};
   const onDeleteHandler = () => {};
+  const iconStyle = {
+    marginRight: '.5rem',
+  }
   const PendingPost = () => (
     <div className={classes.PendingPost}>
       <div className={classes.PendingPost__Img}>
-        <img src={Avatar} alt="avatar" />
+        <img src={Avatar} alt='avatar' />
       </div>
       <div className={classes.PendingPost__Btns}>
-        <div className={classes.PendingPost__ApproveBtn} onClick={onApproveHandler}>Approve</div>
-        <div className={classes.PendingPost__DeleteBtn} onClick={onDeleteHandler}>Delete</div>
+        <div
+          className={classes.PendingPost__ApproveBtn}
+          onClick={onApproveHandler}
+        >
+          <i className='fas fa-check' style={iconStyle}></i>
+          Approve
+        </div>
+        <div
+          className={classes.PendingPost__DeleteBtn}
+          onClick={onDeleteHandler}
+        >
+          <i className='fas fa-trash-alt' style={iconStyle}></i>Delete
+        </div>
       </div>
       <div className={classes.PendingPost__User}>
         <p className={classes.PendingPost__Name}>Ahmed Eid</p>
