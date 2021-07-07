@@ -1,0 +1,15 @@
+@import '../../../../../styles/abstract/colors';
+@import '../../../../../styles/mixins/mixins';
+
+.ChooseBook {
+  @include boxPad;
+  &__Info {
+    &__Title {
+      font-size: 1.1rem;
+      font-weight: bold;
+    }
+  }
+  &__Content {
+    padding: 1rem;
+  }
+}

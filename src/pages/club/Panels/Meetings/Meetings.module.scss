@@ -7,9 +7,15 @@
     border-bottom: 1px solid $color-primary;
     cursor: pointer;
   }
-  &__Upcoming {
+  &__Upcoming,
+  &__Finished {
     &__Title {
       @include Title-h2(0, 0, 2rem, 0);
+    }
+  }
+  &__Finished {
+    &__Title {
+      margin-top: 2rem;
     }
   }
 }

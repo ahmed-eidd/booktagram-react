@@ -1,10 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { extendClasses } from '../../utilities/extendClasses';
 import classes from './Button.module.scss';
 
 const Button = ({
   children,
-  type,
+  type = 'button',
   to,
   isLoading,
   variant,
@@ -14,10 +15,13 @@ const Button = ({
   ...props
 }) => {
   // css classes
+  // extendClasses(classes.btn, [classes.outline, className]);
+  // extendClasses(classes.btn, [classes.filled, className]);
   const btnClass =
     variant === 'outline'
-      ? [classes.btn, classes.outline, className].join(' ')
-      : [classes.btn, classes.filled, className].join(' ');
+      ? extendClasses(classes.btn, [classes.outline, className])
+      : extendClasses(classes.btn, [classes.filled, className]);
+
   return (
     <>
       {/* If Button is a Link */}
@@ -25,7 +29,7 @@ const Button = ({
       {type === 'link' && (
         <Link to={to} className={btnClass} onClick={onClick} style={style}>
           {isLoading ? (
-       <div className={classes.loader}>Loading...</div>
+            <div className={classes.loader}>Loading...</div>
           ) : (
             children
           )}
@@ -34,7 +38,7 @@ const Button = ({
 
       {/* if Button is an anchor */}
 
-      {type !== 'link' && (
+      {type === 'button' && (
         <button
           onClick={onClick}
           style={style}
@@ -47,6 +51,36 @@ const Button = ({
             children
           )}
         </button>
+      )}
+
+      {type === 'submit' && (
+        <button
+          onClick={onClick}
+          style={style}
+          className={btnClass}
+          type={type}
+        >
+          {isLoading ? (
+            <div className={classes.loader}>Loading...</div>
+          ) : (
+            children
+          )}
+        </button>
+      )}
+      {type === 'underline' && (
+        <div
+          className={extendClasses(classes.underline, className)}
+          onClick={onClick}
+          style={style}
+        >
+          <i
+            style={{
+              marginRight: '.5rem',
+            }}
+            className='fas fa-plus-circle'
+          ></i>
+          <button>{children}</button>
+        </div>
       )}
     </>
   );

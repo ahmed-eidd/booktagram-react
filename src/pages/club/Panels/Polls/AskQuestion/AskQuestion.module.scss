@@ -1,0 +1,21 @@
+@import '../../../../../styles/abstract/colors';
+@import '../../../../../styles/mixins/mixins';
+
+.AskQuestion {
+  @include boxPad;
+  &__Info {
+    &__Title {
+      font-size: 1.1rem;
+      font-weight: bold;
+    }
+  }
+  &__Content {
+    padding: 1rem;
+    &__Question {
+      &:not(:last-child) {
+        margin-bottom: 2rem;
+      }
+      @include Flexing(space-between, center);
+    }
+  }
+}

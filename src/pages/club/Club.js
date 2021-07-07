@@ -11,6 +11,7 @@ import Pending from './Panels/Pending/Pending';
 import Settings from './Panels/Settings/Settings';
 import CurrentlyReading from './Panels/CurrentlyReading/CurrentlyReading';
 import Meetings from './Panels/Meetings/Meetings';
+import Polls from './Panels/Polls/Polls';
 
 const club = () => {
   const tabs = [
@@ -33,7 +34,7 @@ const club = () => {
         <TabPanel>
           <Discussion />
         </TabPanel>
-        <TabPanel>Polls</TabPanel>
+        <TabPanel><Polls /></TabPanel>
         <TabPanel><CurrentlyReading/></TabPanel>
         <TabPanel><Meetings/></TabPanel>
         <TabPanel>

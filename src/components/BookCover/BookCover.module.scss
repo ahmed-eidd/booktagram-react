@@ -1,0 +1,25 @@
+@import '../../styles/abstract/colors';
+@import '../../styles/mixins/mixins';
+
+.Book {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+
+  &__Cover {
+    height: 13.4rem;
+    width: 10.3rem;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+  &__Info {
+    margin-top: 1rem;
+    &__Title {
+      @include Title-h2(0, 0, 0rem, 0);
+    }
+  }
+}

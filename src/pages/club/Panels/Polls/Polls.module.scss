@@ -1,3 +1,14 @@
+@import '../../../../styles/abstract/colors';
+@import '../../../../styles/mixins/mixins';
+
 .Polls {
-  
+  &__Upcoming {
+    @include boxPad;
+    &__Title {
+      @include Title-h2(0, 0, 2rem, 0);
+    }
+  }
+  &__ChooseBook {
+    @include boxPad;
+  }
 }
