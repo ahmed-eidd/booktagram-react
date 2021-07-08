@@ -1,15 +1,31 @@
-import { Radio } from '@chakra-ui/react';
-import React from 'react'
+import React, { useState } from 'react';
+import RadioGroup from '../../../../../components/Form/RadioGroup/RadioGroup';
+import Radio from '../../../../../components/Form/Radio/Radio';
 import Modal from '../../../../../components/Modal/Modal';
+import Calendar from '../../../../../components/Form/Calendar/Calendar';
 
-const PollsModal = ({open,onClose,onOpen}) => {
+// Constant
+const READ_MONTH = 'Read Month';
+const MEETING = 'Meeting';
+const QUESTION = 'Question';
+
+const PollsModal = ({ open, onClose, onOpen }) => {
+  const [type, setType] = useState(READ_MONTH);
   return (
-    <Modal isOpen={open} onClose={onClose} onOpen={onOpen}>
-      <Radio >Test</Radio>
-      <Radio >Test</Radio>
-      <Radio >Test</Radio>
+    <Modal
+      title='Create A New Poll'
+      isOpen={open}
+      onClose={onClose}
+      onOpen={onOpen}
+    >
+      <Calendar />
+      <RadioGroup title='Choose Poll Type' onChange={setType} value={type}>
+        <Radio value={READ_MONTH}>{READ_MONTH}</Radio>
+        <Radio value={MEETING}>{MEETING}</Radio>
+        <Radio value={QUESTION}>{QUESTION}</Radio>
+      </RadioGroup>
     </Modal>
-  )
-}
+  );
+};
 
-export default PollsModal
+export default PollsModal;

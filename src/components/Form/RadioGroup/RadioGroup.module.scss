@@ -1,0 +1,9 @@
+@import '../../../styles/abstract/colors';
+@import '../../../styles/mixins/mixins';
+
+.RadioGroup {
+  @include Flexing(space-between, flex-start, column);
+  &__Title {
+    @include Title-h2(0, 0, 1rem, 0);
+  }
+}

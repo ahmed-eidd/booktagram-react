@@ -9,14 +9,9 @@ import store, { history } from './service/configureStore';
 import { ConnectedRouter } from 'connected-react-router';
 import firebase from 'firebase/app';
 import { ReactReduxFirebaseProvider } from 'react-redux-firebase';
-import {createFirestoreInstance} from 'redux-firestore'
+import { createFirestoreInstance } from 'redux-firestore';
 import 'firebase/firestore';
 import 'firebase/auth';
-
-
-
-
-
 
 const language = navigator.language.split(/[-_]/)[0];
 
@@ -37,7 +32,6 @@ const fbconfing = {
   // measurementId: process.env.REACT_APP_measurementId,
 };
 
-
 const rrfConfing = {
   userProfile: 'users',
   useFirestoreForProfile: true,
@@ -55,7 +49,7 @@ const rrfProps = {
   firebase,
   config: rrfConfing,
   dispatch: store.dispatch,
-  createFirestoreInstance
+  createFirestoreInstance,
 };
 
 const theme = extendTheme({
@@ -66,10 +60,10 @@ const theme = extendTheme({
       },
     },
   },
-  colors :{
-    colorPrimary: '#21545F',
-    colorSecondary: '#E7FAFC'
-  }
+  colors: {
+    greenDark: '#21545F',
+    secondary: '#E7FAFC',
+  },
 });
 
 ReactDOM.render(
@@ -77,18 +71,18 @@ ReactDOM.render(
     <Provider store={store}>
       <ConnectedRouter history={history}>
         {/* <BrowserRouter> */}
-          <ReactReduxFirebaseProvider {...rrfProps}>
-            <ChakraProvider theme={theme}>
-              <IntlProvider
-                locale={language}
-                // defaultLocale={defaultLocale}
-                messages={locales[language]}
-              >
-                <App />
-                {/* <ToastContainer /> */}
-              </IntlProvider>
-            </ChakraProvider>
-          </ReactReduxFirebaseProvider>{' '}
+        <ReactReduxFirebaseProvider {...rrfProps}>
+          <ChakraProvider theme={theme}>
+            <IntlProvider
+              locale={language}
+              // defaultLocale={defaultLocale}
+              messages={locales[language]}
+            >
+              <App />
+              {/* <ToastContainer /> */}
+            </IntlProvider>
+          </ChakraProvider>
+        </ReactReduxFirebaseProvider>{' '}
         {/* </BrowserRouter> */}
       </ConnectedRouter>
     </Provider>

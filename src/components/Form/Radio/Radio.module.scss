@@ -1,0 +1,13 @@
+@import '../../../styles/abstract/colors';
+
+.Radio {
+  font-size: 1.1rem;
+
+  &[data-checked] {
+    background: $color-primary !important;
+    border-color: $color-primary !important;
+  }
+  &:focus {
+    box-shadow: none !important;
+  }
+}

@@ -27,7 +27,13 @@
   margin: $mt $mr $mb $ml;
 }
 
-@mixin Flexing($justify, $align, $direction:row) {
+@mixin Title-lg($mt, $mr, $mb, $ml) {
+  font-size: 1.3125rem;
+  font-weight: bold;
+  margin: $mt $mr $mb $ml;
+}
+
+@mixin Flexing($justify, $align, $direction: row) {
   display: flex;
   flex-direction: column;
   justify-content: $justify;

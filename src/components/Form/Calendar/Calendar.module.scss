@@ -1,0 +1,41 @@
+@import '../../../styles/abstract/colors';
+
+.CalendarWrapper {
+  width: 100%;
+}
+
+.Calendar {
+  position: relative;
+  width: 16.5rem;
+  &__Modal {
+  }
+
+  &__Input {
+    // background-color: $color-secondary;
+    padding: 0 1rem;
+    border: 2px solid $color-primary;
+    padding-inline-start: var(--chakra-space-4);
+    -webkit-padding-end: var(--chakra-space-4);
+    padding-inline-end: var(--chakra-space-4);
+    height: var(--chakra-sizes-10);
+    border-radius: 4px;
+    width: 100%;
+    text-align: left;
+  }
+  &__Icon {
+    position: absolute;
+    font-size: 1.5rem;
+    right: 5%;
+    top: 0;
+    pointer-events: none;
+    height: 100%;
+    &:after {
+      content: '';
+      position: absolute;
+      height: 100%;
+      width: 2px;
+      background-color: $color-primary;
+      left: -10px;
+    }
+  }
+}
