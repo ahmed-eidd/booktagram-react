@@ -18,7 +18,7 @@ const Tabs = ({tabs = [], className = '', children}) => {
   };
   return (
     <CTabs  variant="unstyled" className={[classes.Tabs, className].join(' ')}>
-      <TabList className={classes.TabList}>
+      <TabList style={{justifyContent: tabs?.length > 4 ? 'space-between' : 'flex-start'}} className={classes.TabList}>
         {tabs?.map((el) => (
           <Tab _selected={tabSelected} className={classes.Tab} key={el}>
             {el}

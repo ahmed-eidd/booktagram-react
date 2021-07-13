@@ -11,7 +11,7 @@ import ProfileImg from '../../../assests/news/test.png';
 
 const GroupCardPage = ({children}) => {
   return (
-    <Grid templateColumns="1fr repeat(8,minmax(min-content, 14rem)) 1fr">
+    <Grid templateColumns="1fr repeat(8,minmax(min-content, 12rem)) 1fr">
       <div className={classes.BgImgContainer}>
         <img
           src={Img}
