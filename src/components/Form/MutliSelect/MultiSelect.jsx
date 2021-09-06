@@ -3,6 +3,7 @@ import ReactSelect from 'react-select';
 import classes from './MultiSelect.module.scss';
 import { useField } from 'formik';
 import FormControl from '../FormControl/FormControl';
+import { colors } from '../../../styles/abstract/colors';
 
 const MultiSelect = ({
   label,
@@ -17,32 +18,35 @@ const MultiSelect = ({
   const defaultValue = (options, value) => {
     return options ? options.find((option) => option.value === value) : '';
   };
+
+  const {grey,primary,secondary} = colors
+
   // styles
   const colourStyles = {
     control: (styles) => ({
       ...styles,
-      backgroundColor: '#E7FAFC',
-      border: '2px solid #21545F ',
+      backgroundColor:secondary,
+      border: `2px solid ${grey}`,
       ':hover:': {
-        border: '2px solid #21545F ',
+        border: `2px solid ${grey} `,
       },
     }),
-    dropdownIndicator: (styles) => ({ ...styles, color: '#21545F' }),
+    dropdownIndicator: (styles) => ({ ...styles, color: grey }),
     indicatorSeparator: (styles) => ({ display: 'none' }),
-    menu: (styles) => ({ ...styles, backgroundColor: '#E7FAFC' }),
+    menu: (styles) => ({ ...styles, backgroundColor: secondary}),
     option: (styles, { data, isDisabled, isFocused, isSelected }) => ({
       ...styles,
-      backgroundColor: isSelected && '#21545F',
-      color: isSelected && '#e7fafc',
+      backgroundColor: isSelected && grey,
+      color: isSelected &&grey,
       ':active': {
         ...styles[':active'],
-        backgroundColor: '#21545F',
-        color: '#E7FAFC',
+        backgroundColor: grey,
+        color:secondary,
       },
       ':hover': {
         ...styles[':active'],
-        backgroundColor: '#21545F',
-        color: '#E7FAFC',
+        backgroundColor: grey,
+        color:secondary,
       },
     }),
     input: (styles) => ({ ...styles }),

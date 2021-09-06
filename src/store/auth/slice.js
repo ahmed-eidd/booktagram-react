@@ -1,9 +1,9 @@
-import { createSlice } from '@reduxjs/toolkit';
 import {actionTypes}from './actionTypes';
 
 const initialState = {
   user: {},
   loading: false,
+  modal:null 
 };
 
 const authReducer = (state = initialState, action) => {
@@ -49,61 +49,23 @@ const authReducer = (state = initialState, action) => {
       }
     }
 
+    case actionTypes.SET_AUTH_MODAL_OPEN: {
+      return {
+        ...state,
+        modal: payload
+      }
+    }
+    
+    case actionTypes.SET_AUTH_MODAL_CLOSE: {
+      return {
+        ...state, 
+        modal: null 
+      }
+    }
+
     default:
       return state;
   }
 };
 
 export default authReducer
-
-// export const authSlice = createSlice({
-//   name: 'authAction',
-//   initialState: {
-//     user: {},
-//     loading: false,
-//   },
-//   reducers: {
-//     loginUser: (state, action) => {
-//       state.loading = true;
-//     },
-//     loginUserSuccess: (state, action) => {
-//       state.items = { ...action.payload };
-//       state.loading = false;
-//     },
-//     loginUserFail: (state, action) => {
-//       state.loading = false;
-//     },
-//     signUpUser: (state, action) => {
-//       state.loading = true;
-//     },
-//     signUpUserSuccess: (state) => {
-//       state.loading = false;
-//     },
-//     signUpUserFail: (state) => {
-//       state.loading = false;
-//     },
-//     signOut: (state) => {
-//       state.loading = true;
-//     },
-//     signOutSuccess: (state) => {
-//       state.loading = false;
-//     },
-//     signOutFail: (state) => {
-//       state.loading = false;
-//     },
-//   },
-// });
-
-// export const {
-//   loginUser,
-//   loginUserFail,
-//   loginUserSuccess,
-//   signUpUser,
-//   signUpUserFail,
-//   signUpUserSuccess,
-//   signOut,
-//   signOutFail,
-//   signOutSuccess,
-// } = authSlice.actions;
-
-// export default authSlice.reducer;

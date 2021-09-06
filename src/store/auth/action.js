@@ -24,3 +24,12 @@ export const logoutSuccessAction = () => ({
 export const logoutFailAction = () => ({
   type: actionTypes.LOGOUT_FAIL,
 });
+
+export const setAuthModalOpen = (modalType) => ({
+  type: actionTypes.SET_AUTH_MODAL_OPEN,
+  payload: modalType
+})
+
+export const setAuthModalClose = () => ({
+  type: actionTypes.SET_AUTH_MODAL_CLOSE,
+})

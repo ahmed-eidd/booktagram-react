@@ -6,14 +6,16 @@ import {
   Tab,
 } from '@chakra-ui/react';
 import classes from './Tabs.module.scss';
+import { colors } from '../../styles/abstract/colors';
 
 const Tabs = ({tabs = [], className = '', children}) => {
-  // const tabs = ['Speakers', 'Details', 'Orgnaizer'];
-  // console.log('tabs', children)
+
+  const {grey,primary,secondary} = colors
+  
   const tabSelected = {
     opacity: '100% !important',
     boxShadow: '0 !important',
-    borderBottom: '1px solid #21545F',
+    borderBottom: `2px solid ${primary}`,
     outline: 'none',
   };
   return (

@@ -1,13 +1,13 @@
 @import '../../../styles/abstract/colors';
 
 .Input {
-  border-color: $color-primary !important;
+  border-color: $color-grey !important;
   border-radius: 4px !important;
   border: 2px solid !important;
   // margin-top: 1.5rem;
   // margin-bottom: 1.5rem;
   &::placeholder {
-    color: $color-primary !important;
+    color: $color-grey !important;
   }
 }
 

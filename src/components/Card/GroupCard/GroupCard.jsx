@@ -22,7 +22,7 @@ const GroupCard = () => {
         </div>
       </div>
       <h3 className={classes.Title}>Loerm Ipsum Book Club</h3>
-      <p className={classes.des}>
+      <p className={classes.description}>
         Excepteur sint occaecat cupidatat non sint proidenm sunt in culpa qui
         officia indese norunt mollit aim id est sint laborum sunt in culpa qui
         officia indese norunt ml aim id est sint laborum.

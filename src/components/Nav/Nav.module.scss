@@ -7,7 +7,7 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  padding: 1.5rem 0;
+  padding: .5rem 0;
   position: fixed;
   top: 0;
   transform: translateY(0);
@@ -37,22 +37,14 @@
   align-items: center;
 }
 
-.navItem {
-  // font-weight: 700;
-  // margin-right: 3px;
-  padding: 0.625rem 1.5rem;
-  // text-transform: uppercase;
-  transition: color 0.3s;
-  &:hover {
-    color: rgba($color: #000000, $alpha: 0.5);
-  }
-}
-
-.logo {
-  font-family: 'Pacifico', cursive;
+.Logo {
   padding: 5px;
-  font-size: 1.6rem;
-  // background-color: $color-primary;
+  width: auto;
+  height: 5rem;
+}
+.LogoImg {
+  width: 100%;
+  height: 100%;
 }
 
 .navBtns {

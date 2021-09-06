@@ -15,7 +15,9 @@ const InputField = ({
   placeholder,
   type,
   className,
+  inputStyle,
   style,
+  errorMessage,
   ...props
 }) => {
   const [field, { error, touched }] = useField(props);
@@ -23,7 +25,7 @@ const InputField = ({
   return (
     <FormControl
       className={className}
-      error={error}
+      error={error || errorMessage}
       touched={touched}
       label={label}
       labelStyle={labelStyle}
@@ -32,12 +34,12 @@ const InputField = ({
     >
       <Input
         {...field}
-        
         id={field.name}
         type={type}
         placeholder={placeholder}
         style={{
           borderColor: error && '#E53E3E',
+          ...inputStyle
         }}
         className={[
           error ? [classes.Input, classes.InputError].join(' ') : classes.Input,

@@ -1,18 +1,16 @@
 @import '../../../styles/abstract/colors';
+@import '../../../styles/abstract/variables';
 
 .WideCard {
   display: flex;
   align-items: center;
-  border: 1px solid $color-primary;
   padding: 2rem;
   border-radius: 8px;
+  box-shadow: $box-shadow-sm;
 }
 
 .ImgContainer {
   position: relative;
-  // min-width: 23.3rem;
-  // height: 15rem;
-
   min-width: 30.3rem;
   height: 23rem;
   img {

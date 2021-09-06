@@ -39,26 +39,26 @@ const CurrentlyReading = () => {
         <BookCover
           cover={cover}
           title='Rich Dad , Poor Dad'
-          author=''
-          date='on April 2021'
+          author='Ahmed Eid'
+          date=' April 2021'
         />
         <BookCover
           cover={cover}
           title='Rich Dad , Poor Dad'
-          author=''
-          date='on April 2021'
+          author='Ahmed Eid'
+          date=' April 2021'
         />
         <BookCover
           cover={cover}
           title='Rich Dad , Poor Dad'
-          author=''
-          date='on April 2021'
+          author='Ahmed Eid'
+          date=' April 2021'
         />
         <BookCover
           cover={cover}
           title='Rich Dad , Poor Dad'
-          author=''
-          date='on April 2021'
+          author='Ahmed Eid'
+          date=' April 2021'
         />
       </div>
     </div>

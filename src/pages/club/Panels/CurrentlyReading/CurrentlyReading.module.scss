@@ -44,6 +44,8 @@
     @include boxPad;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    justify-content: center;
+    justify-items: center;
     row-gap: 2rem;
     &__Title {
       @include Title-h2(2rem, 0, 2rem, 0);

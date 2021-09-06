@@ -1,0 +1,17 @@
+@import '../../../styles/abstract/colors';
+
+.NavItem {
+  // font-weight: 700;
+  // margin-right: 3px;
+  padding: 0.625rem 1.5rem;
+  // text-transform: uppercase;
+  transition: color 0.3s;
+  &:hover {
+    color: rgba($color: #000000, $alpha: 0.5);
+  }
+}
+
+.active {
+  color: $color-primary;
+  font-weight: bold;
+}

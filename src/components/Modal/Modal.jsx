@@ -9,7 +9,7 @@ import {
 } from '@chakra-ui/react';
 import classes from './Modal.module.scss';
 
-const Modal = ({ isOpen, onOpen, onClose, children, loading,title }) => {
+const Modal = ({ isOpen, onOpen, onClose, children, loading,title, size ='md' }) => {
   const ModalClasses = [
     classes.ModalChildren,
     loading ? classes.ModalChildrenLoading : null,
@@ -26,6 +26,7 @@ const Modal = ({ isOpen, onOpen, onClose, children, loading,title }) => {
       onClose={onClose}
       scrollBehavior='inside'
       className={classes.Modal}
+      size={ size } 
     >
       <ModalOverlay />
       <ModalContent>

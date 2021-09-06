@@ -8,7 +8,7 @@ const Button = ({
   type = 'button',
   to,
   isLoading,
-  variant,
+  variant = 'filled',
   onClick,
   style,
   className,

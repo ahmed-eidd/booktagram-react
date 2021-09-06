@@ -13,7 +13,7 @@
   &__Input {
     // background-color: $color-secondary;
     padding: 0 1rem;
-    border: 2px solid $color-primary;
+    border: 2px solid $color-grey;
     padding-inline-start: var(--chakra-space-4);
     -webkit-padding-end: var(--chakra-space-4);
     padding-inline-end: var(--chakra-space-4);
@@ -34,7 +34,7 @@
       position: absolute;
       height: 100%;
       width: 2px;
-      background-color: $color-primary;
+      background-color: $color-grey;
       left: -10px;
     }
   }

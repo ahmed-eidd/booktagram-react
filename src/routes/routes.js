@@ -4,7 +4,8 @@ import Layout from '../components/Layout/Layout.jsx';
 import Home from '../pages/Home';
 import Clubs from '../pages/club';
 import Events from '../pages/events';
-import Success from '../pages/Success.js';
+import Shop from '../pages/shop'
+import Success from '../pages/success.js';
 import Dashboard from '../components/Dashboard/Dashboard.jsx';
 import Guide from '../pages/guide';
 import { useSelector } from 'react-redux';
@@ -24,6 +25,7 @@ const Routes = () => {
           <Route path="/events" component={Events} />
           <Route path='/guide' component={Guide} />
           <Route path="/success" component={Success} />
+          <Route path="/shop" component={Shop} />
           <Route path="/logout" component={Logout} />
           {/* <Route exact path='/club/:id' component={club} /> */}
         </Switch>

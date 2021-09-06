@@ -56,7 +56,7 @@ const theme = extendTheme({
   styles: {
     global: {
       body: {
-        color: '#21545F',
+
       },
     },
   },

@@ -1,12 +1,15 @@
-import React from 'react'
-import Layout from '../../components/Layout/Layout'
+import React from 'react';
+import { Route, Switch } from 'react-router-dom';
+import ShopItem from './ShopItem';
+import ShopList from './ShopList';
 
 const index = () => {
   return (
-    <Layout>
-      <div>shop</div>
-    </Layout>
-  )
-}
+    <Switch>
+      <Route path='/shop' exact component={ShopList} />
+      <Route path='/shop/:id' exact component={ShopItem} />
+    </Switch>
+  );
+};
 
-export default index
+export default index;

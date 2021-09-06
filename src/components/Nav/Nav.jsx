@@ -2,33 +2,34 @@ import React, { useEffect, useState } from 'react';
 import classes from './Nav.module.scss';
 import { Link } from 'react-router-dom';
 import { useIntl } from 'react-intl';
-
 import { Select } from '@chakra-ui/react';
-import Button from '../Button/Button';
+import {setAuthModalOpen} from '../../store/auth/action';
+import {useDispatch} from 'react-redux';
 import LoginModal from '../LoginModal/LoginModal';
+import Button from '../Button/Button';
+import Logo from '../../assests/logo.png';
+import Navitem from './NavItem/NavItem';
+
+
+const SIGN_IN = 'signin';
+const SIGN_UP = 'signup'
+
 
 const Nav = () => {
   const { formatMessage } = useIntl();
   const f = (id) => formatMessage({ id });
+  const dispatch = useDispatch();
   const [scrollDir, setScrollDir] = useState('scrolling up');
   const [scrolling, setScrolling] = useState(false);
-  const [modalOpen, setModalOpen] = useState(false);
-  const [tab, setTab] = useState('');
 
   const signUpOpen = () => {
-    setModalOpen(true);
-    setTab('signup');
+    dispatch(setAuthModalOpen(SIGN_UP));
   };
 
   const signInOpen = () => {
-    setModalOpen(true);
-    setTab('signin');
+    dispatch(setAuthModalOpen(SIGN_IN))
   };
 
-  const onModalClose = () => {
-    setModalOpen(false);
-    setTab('')
-  };
 
   useEffect(() => {
     const threshold = 0;
@@ -77,39 +78,23 @@ const Nav = () => {
           scrollDir === 'scrolling up' ? 'translateY(0)' : 'translateY(-100vh)',
       }}
     >
-      <Link to="/" className={classes.logo}>
-        Booktagram
+      <Link to="/" className={classes.Logo}>
+        {/* Booktagram Logo */}
+        <img src={Logo} alt="logo" className={classes.LogoImg}/>
       </Link>
       <div className={classes.navItems}>
         <ul className={classes.navList}>
-          <li className={classes.navItem}>
-            <Link to="/">{f('nav_home')}</Link>
-          </li>
-          <li className={classes.navItem}>
-            <Link to="/news">{f('nav_news')}</Link>
-          </li>
-          <li className={classes.navItem}>
-            <Link to="/events">{f('nav_events')}</Link>
-          </li>
-          <li className={classes.navItem}>
-            <Link to="/shop">{f('nav_shop')}</Link>
-          </li>
-          <li className={classes.navItem}>
-            <Link to="/clubs">{f('nav_club')}</Link>
-          </li>
-          <li className={classes.navItem}>
-            <Link to="/guide">{f('nav_guide')}</Link>
-          </li>
-          <li className={classes.navItem}>
-            <Link to="/about">{f('nav_about')}</Link>
-          </li>{' '}
-          <li className={classes.navItem}>
-            <Link to="/contactus">{f('nav_contactus')}</Link>
-          </li>
+          <Navitem to='/' intlId='nav_home' />
+          <Navitem to='/news' intlId='nav_news' />
+          <Navitem to='/events' intlId='nav_events' />
+          <Navitem to='/shop' intlId='nav_shop' />
+          <Navitem to='/clubs' intlId='nav_club' />
+          <Navitem to='/guide' intlId='nav_guide' />
+          <Navitem to='/about' intlId='nav_about' />
+          <Navitem to='/contactus' intlId='nav_contactus' />
         </ul>
       </div>
-
-      <LoginModal open={modalOpen} close={onModalClose} tab={tab} />
+      <LoginModal />
 
       <div className={classes.navBtns}>
         <Button style={{ marginRight: '5px' }} onClick={signUpOpen}>
