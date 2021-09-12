@@ -9,6 +9,8 @@ import TextArea from '../../../../../components/Form/TextArea/TextArea';
 import ListItem from '../../../../../components/ListItem/ListItem';
 import * as Yup from 'yup';
 import { useState } from 'react';
+import BookCover from '../../../../../components/BookCover/BookCover';
+import cover from '../../../../../assests/bookcover.jpg';
 
 const Questions = () => {
   const [error, setError] = useState('');
@@ -19,19 +21,19 @@ const Questions = () => {
     time: Yup.date().required(),
   });
   const onItemAdd = (values, setValue) => {
-    console.log(values.singleQuestion)
+    console.log(values.singleQuestion);
     if (values?.singleQuestion == '') {
       setError('Type something to add');
       return;
     }
 
     if (values?.questions?.length > 4) {
-      setError('Too Many Questions')
+      setError('Too Many Questions');
       return;
     }
     setValue('questions', [...values.questions, values.singleQuestion]);
     setValue('singleQuestion', '');
-    setError('')
+    setError('');
   };
   const onItemDelete = (values, setValue, el) => {
     setValue(
@@ -57,7 +59,7 @@ const Questions = () => {
               errorMessage={error}
               labelStyle={{ fontWeight: 'bold' }}
               name='singleQuestion'
-              label='Add Question To Pool'
+              label='Add Book To The Pool'
               placeholder='write a question'
             />
             <Button onClick={() => onItemAdd(values, setFieldValue)}>
@@ -69,15 +71,28 @@ const Questions = () => {
             direction='column'
             alignItems='center'
           >
-            {values.questions.map((el, i) => (
-              <Flex key={i} style={{ width: '100%' }}>
-                <ListItem
+            <Flex style={{ width: '100%' }}>
+              {/* <ListItem
                   onDelete={() => onItemDelete(values, setFieldValue, el)}
                 >
                   {el}
-                </ListItem>
-              </Flex>
-            ))}
+                </ListItem> */}
+              <BookCover
+                cover={cover}
+                title='Rich Dad , Poor Dad'
+                author='Ahmed Eid'
+              />
+              <BookCover
+                cover={cover}
+                title='Rich Dad , Poor Dad'
+                author='Ahmed Eid'
+              />
+              <BookCover
+                cover={cover}
+                title='Rich Dad , Poor Dad'
+                author='Ahmed Eid'
+              />
+            </Flex>
           </Flex>
           <FormCalendar name='time' label='Poll Du Date' />
           <Button type='submit' style={{ marginLeft: 'auto' }}>

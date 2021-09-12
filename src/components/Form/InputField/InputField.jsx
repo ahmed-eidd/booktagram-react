@@ -38,7 +38,7 @@ const InputField = ({
         type={type}
         placeholder={placeholder}
         style={{
-          borderColor: error && '#E53E3E',
+          borderColor: error && '#E53E3E !important',
           ...inputStyle
         }}
         className={[

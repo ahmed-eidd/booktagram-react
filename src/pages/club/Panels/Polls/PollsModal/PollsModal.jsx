@@ -10,6 +10,8 @@ import FormGroup from '../../../../../components/Form/FormGroup/FormGroup';
 import Button from '../../../../../components/Button/Button';
 import { Flex } from '@chakra-ui/react';
 import Questions from './Questions';
+import Meetings from './Meetings';
+import ReadMonth from './ReadMonth';
 
 // Constant
 const READ_MONTH = 'Read Month';
@@ -91,56 +93,56 @@ const PollsModal = ({ open, onClose, onOpen }) => {
   //   </Formik>
   // );
 
-  const Meetings = (
-    <Formik
-      onSubmit={() => console.log('aaa')}
-      initialValues={{ description: '', questions: '' }}
-    >
-      {() => (
-        <FormGroup title='Meetings'>
-          <TextArea
-            name='description'
-            label='Description'
-            placeholder='Description'
-          />
-          <InputField
-            name='questions'
-            label='Add Question To Pool'
-            placeholder='write a question'
-          />
-          {/* <Calendar /> */}
-        </FormGroup>
-      )}
-    </Formik>
-  );
+  // const Meetings = (
+  //   <Formik
+  //     onSubmit={() => console.log('aaa')}
+  //     initialValues={{ description: '', questions: '' }}
+  //   >
+  //     {() => (
+  //       <FormGroup title='Meetings'>
+  //         <TextArea
+  //           name='description'
+  //           label='Description'
+  //           placeholder='Description'
+  //         />
+  //         <InputField
+  //           name='questions'
+  //           label='Add Question To Pool'
+  //           placeholder='write a question'
+  //         />
+  //         {/* <Calendar /> */}
+  //       </FormGroup>
+  //     )}
+  //   </Formik>
+  // );
 
-  const ReadMonth = (
-    <Formik
-      onSubmit={() => console.log('aaa')}
-      initialValues={{ description: '', questions: '' }}
-    >
-      {() => (
-        <FormGroup title='Read Month'>
-          <TextArea
-            name='description'
-            label='Description'
-            placeholder='Description'
-          />
-          <InputField
-            name='questions'
-            label='Add Question To Pool'
-            placeholder='write a question'
-          />
-          {/* <Calendar /> */}
-        </FormGroup>
-      )}
-    </Formik>
-  );
+  // const ReadMonth = (
+  //   <Formik
+  //     onSubmit={() => console.log('aaa')}
+  //     initialValues={{ description: '', questions: '' }}
+  //   >
+  //     {() => (
+  //       <FormGroup title='Read Month'>
+  //         <TextArea
+  //           name='description'
+  //           label='Description'
+  //           placeholder='Description'
+  //         />
+  //         <InputField
+  //           name='questions'
+  //           label='Add Question To Pool'
+  //           placeholder='write a question'
+  //         />
+  //         {/* <Calendar /> */}
+  //       </FormGroup>
+  //     )}
+  //   </Formik>
+  // );
 
   console.log(type);
   return (
     <Modal
-      size='lg'
+      size='xl'
       title='Create A New Poll'
       isOpen={open}
       onClose={onClose}
@@ -153,8 +155,8 @@ const PollsModal = ({ open, onClose, onOpen }) => {
       </RadioGroup>
 
       {type === QUESTION && <Questions />}
-      {type === MEETING && Meetings}
-      {type === READ_MONTH && ReadMonth}
+      {type === MEETING && <Meetings />}
+      {type === READ_MONTH && <ReadMonth />}
     </Modal>
   );
 };

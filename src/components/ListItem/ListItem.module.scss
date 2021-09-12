@@ -1,0 +1,17 @@
+.ListItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin: 0.5rem 0;
+  &__Text {
+    font-size: 1.1rem;
+  }
+  &__Icon {
+    font-size: 1.2rem;
+    cursor: pointer;
+  }
+}
+
+
+
