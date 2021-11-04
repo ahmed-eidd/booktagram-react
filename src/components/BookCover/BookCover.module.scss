@@ -1,10 +1,10 @@
-@import '../../styles/abstract/colors';
+@import 'index';
 @import '../../styles/mixins/mixins';
 
 .HoverOn {
   cursor: pointer;
   &:hover {
-  box-shadow: 0px 3px 10px #00000080;
+    box-shadow: 0px 3px 10px #00000080;
   }
 }
 
@@ -13,10 +13,10 @@
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
-  transition: box-shadow .4s ease-in-out;
+  transition: box-shadow 0.4s ease-in-out;
   padding: 1rem 2rem;
   p {
-    margin-bottom: .2rem;
+    margin-bottom: 0.2rem;
   }
   &__Cover {
     height: 13.4rem;
@@ -33,12 +33,14 @@
       @include Title-h2(0, 0, 0rem, 0);
     }
     &__Price {
-    color: $color-primary;
-    font-weight: bold;
+      color: $color-primary;
+      font-weight: bold;
+    }
+    &__Price,
+    &__Date,
+    &__Location,
+    span {
+      font-weight: bold;
+    }
   }
-  &__Price , &__Date, &__Location , span {
-    font-weight: bold;
-  }
-  }
-  
 }

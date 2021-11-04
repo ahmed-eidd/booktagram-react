@@ -1,4 +1,4 @@
-@import '../../styles/abstract/colors';
+@import 'index';
 
 .CardPage {
   // display: flex;
@@ -17,7 +17,7 @@
   font-weight: bold;
   margin: 1.5rem 0;
   span {
-    margin-left: .5rem;
+    margin-left: 0.5rem;
     cursor: pointer;
     border-bottom: 2px solid $color-primary;
   }
@@ -42,10 +42,10 @@
     margin: 1.5rem 0;
     h5 {
       font-size: 1.1rem;
-      margin-bottom: .5rem;
+      margin-bottom: 0.5rem;
       i {
         font-size: 1rem;
-        margin-right: .7rem;
+        margin-right: 0.7rem;
       }
     }
   }

@@ -1,5 +1,4 @@
-@import '../../styles/abstract/colors';
-@import '../../styles/mixins/mixins';
+@import 'index';
 
 .btn {
   overflow: hidden;
@@ -35,9 +34,9 @@
 }
 
 .underline {
-    @include Title-h2(0, 0, 2rem, 0);
-    border-bottom: 1px solid $color-primary;
-    cursor: pointer;
+  @include Title-h2(0, 0, 2rem, 0);
+  border-bottom: 1px solid $color-primary;
+  cursor: pointer;
 }
 
 .loader {

@@ -7,7 +7,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  color: $color-primary;
+  color: $color-grey;
   a {
     padding: 0.6rem 0;
     z-index: 5;
@@ -55,8 +55,8 @@
     background-color: $color-primary;
     transform: scaleX(1);
   }
-  a , i{
+  a,
+  i {
     color: $color-secondary;
   }
-
 }

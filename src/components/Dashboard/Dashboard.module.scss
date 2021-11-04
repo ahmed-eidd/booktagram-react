@@ -1,11 +1,9 @@
-@import '../../styles/abstract/colors';
+@import 'index';
 
 .Dashboard {
   width: 100%;
   min-height: 100vh;
 }
-
-
 
 .Content {
   width: calc(100% - 350px); /* from 260px to 350 */

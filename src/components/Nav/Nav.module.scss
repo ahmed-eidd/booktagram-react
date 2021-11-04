@@ -1,4 +1,4 @@
-@import '../../styles/abstract/colors';
+@import 'index';
 @import '../../styles/abstract/breakpoints';
 @import '../../styles/abstract/typography';
 
@@ -7,11 +7,11 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  padding: .5rem 0;
+  padding: 0.5rem 0;
   position: fixed;
   top: 0;
   transform: translateY(0);
-  transition: all .5s;
+  transition: all 0.5s;
   transform-origin: top;
   z-index: 500;
   background-color: $color-secondary;
@@ -21,7 +21,6 @@
 .scroll {
   box-shadow: 0px 8px 6px rgba($color: #00000012, $alpha: 0.1);
   // box-shadow: 0px 8px 6px #00000012;
-
 }
 
 .navItems {
