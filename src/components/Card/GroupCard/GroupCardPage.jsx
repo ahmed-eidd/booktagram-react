@@ -3,11 +3,10 @@ import React from 'react';
 import Button from '../../Button/Button';
 import { Grid } from '@chakra-ui/layout';
 import classes from './GroupCardPage.module.scss';
-import Tabs from '../../Tabs/Tabs';
-import TabPanel from '../../Tabs/TabPanel/TabPanel';
+// import Tabs from '../../Tabs/Tabs';
+// import TabPanel from '../../Tabs/TabPanel/TabPanel';
 import Img from '../../../assests/news/Background.jpg';
 import ProfileImg from '../../../assests/news/test.png';
-// import { TabPanel } from '@chakra-ui/react';
 
 const GroupCardPage = ({children}) => {
   return (

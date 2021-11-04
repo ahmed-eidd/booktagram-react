@@ -6,7 +6,6 @@ import FormCalendar from '../../../../../components/Form/Calendar/Calendar';
 import FormGroup from '../../../../../components/Form/FormGroup/FormGroup';
 import InputField from '../../../../../components/Form/InputField/InputField';
 import TextArea from '../../../../../components/Form/TextArea/TextArea';
-import ListItem from '../../../../../components/ListItem/ListItem';
 import * as Yup from 'yup';
 import { useState } from 'react';
 import BookCover from '../../../../../components/BookCover/BookCover';
@@ -22,7 +21,7 @@ const Questions = () => {
   });
   const onItemAdd = (values, setValue) => {
     console.log(values.singleQuestion);
-    if (values?.singleQuestion == '') {
+    if (values?.singleQuestion === '') {
       setError('Type something to add');
       return;
     }
@@ -35,12 +34,12 @@ const Questions = () => {
     setValue('singleQuestion', '');
     setError('');
   };
-  const onItemDelete = (values, setValue, el) => {
-    setValue(
-      'questions',
-      values?.questions.filter((item) => item !== el)
-    );
-  };
+  // const onItemDelete = (values, setValue, el) => {
+  //   setValue(
+  //     'questions',
+  //     values?.questions.filter((item) => item !== el)
+  //   );
+  // };
   return (
     <Formik
       onSubmit={(values) => console.log(values)}

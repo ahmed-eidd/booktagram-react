@@ -1,25 +1,15 @@
 import React from 'react';
 import classes from './Sidebar.module.scss';
 import { useIntl } from 'react-intl';
-import { useDispatch, useSelector } from 'react-redux';
-import { signOut } from '../../../store/auth/slice';
 import SidebarItem from '../SidebarItem/SidebarItem';
-import Button from '../../Button/Button';
 import ProfileIcon from '../ProfileIcon/ProfileIcon';
 
 const Sidebar = () => {
-  const profile = useSelector((state) => state.firebase.profile);
-  const dispatch = useDispatch();
   const { formatMessage } = useIntl();
   const f = (id) => formatMessage({ id });
   return (
     <div className={classes.Sidebar}>
       <ProfileIcon />
-      {/* <div className={classes.Avatar}>
-        {profile.firstName && profile.lastName
-          ? profile.firstName + ' ' + profile.lastName
-          : 'John Doe'}
-      </div> */}
       <div className={classes.Links}>
         <ul className={classes.DashList}>
           <SidebarItem to='/' icon='fas fa-home'>

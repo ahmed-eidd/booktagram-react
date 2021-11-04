@@ -1,6 +1,5 @@
 import React from 'react';
 import classes from './ProfileIcon.module.scss';
-import Avatar from '../../../assests/human.jpg';
 import Avatar2 from '../../../assests/avatar.jpg';
 import { useSelector } from 'react-redux';
 

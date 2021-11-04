@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactSelect from 'react-select';
-import classes from './MultiSelect.module.scss';
 import { useField } from 'formik';
 import FormControl from '../FormControl/FormControl';
 import { colors } from '../../../styles/abstract/colors';
@@ -19,13 +18,13 @@ const MultiSelect = ({
     return options ? options.find((option) => option.value === value) : '';
   };
 
-  const {grey,primary,secondary} = colors
+  const { grey, secondary } = colors;
 
   // styles
   const colourStyles = {
     control: (styles) => ({
       ...styles,
-      backgroundColor:secondary,
+      backgroundColor: secondary,
       border: `2px solid ${grey}`,
       ':hover:': {
         border: `2px solid ${grey} `,
@@ -33,20 +32,20 @@ const MultiSelect = ({
     }),
     dropdownIndicator: (styles) => ({ ...styles, color: grey }),
     indicatorSeparator: (styles) => ({ display: 'none' }),
-    menu: (styles) => ({ ...styles, backgroundColor: secondary}),
+    menu: (styles) => ({ ...styles, backgroundColor: secondary }),
     option: (styles, { data, isDisabled, isFocused, isSelected }) => ({
       ...styles,
       backgroundColor: isSelected && grey,
-      color: isSelected &&grey,
+      color: isSelected && grey,
       ':active': {
         ...styles[':active'],
         backgroundColor: grey,
-        color:secondary,
+        color: secondary,
       },
       ':hover': {
         ...styles[':active'],
         backgroundColor: grey,
-        color:secondary,
+        color: secondary,
       },
     }),
     input: (styles) => ({ ...styles }),

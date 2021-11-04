@@ -1,17 +1,11 @@
 import React from 'react';
-import {
-  Tabs as CTabs,
-  TabList,
-  TabPanels,
-  Tab,
-} from '@chakra-ui/react';
+import { Tabs as CTabs, TabList, TabPanels, Tab } from '@chakra-ui/react';
 import classes from './Tabs.module.scss';
 import { colors } from '../../styles/abstract/colors';
 
-const Tabs = ({tabs = [], className = '', children}) => {
+const Tabs = ({ tabs = [], className = '', children }) => {
+  const { primary } = colors;
 
-  const {grey,primary,secondary} = colors
-  
   const tabSelected = {
     opacity: '100% !important',
     boxShadow: '0 !important',
@@ -19,8 +13,13 @@ const Tabs = ({tabs = [], className = '', children}) => {
     outline: 'none',
   };
   return (
-    <CTabs  variant="unstyled" className={[classes.Tabs, className].join(' ')}>
-      <TabList style={{justifyContent: tabs?.length > 4 ? 'space-between' : 'flex-start'}} className={classes.TabList}>
+    <CTabs variant='unstyled' className={[classes.Tabs, className].join(' ')}>
+      <TabList
+        style={{
+          justifyContent: tabs?.length > 4 ? 'space-between' : 'flex-start',
+        }}
+        className={classes.TabList}
+      >
         {tabs?.map((el) => (
           <Tab _selected={tabSelected} className={classes.Tab} key={el}>
             {el}
@@ -28,9 +27,7 @@ const Tabs = ({tabs = [], className = '', children}) => {
         ))}
       </TabList>
 
-      <TabPanels>
-      {children}
-      </TabPanels>
+      <TabPanels>{children}</TabPanels>
     </CTabs>
   );
 };

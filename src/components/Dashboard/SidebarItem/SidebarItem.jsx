@@ -2,7 +2,6 @@ import React from 'react';
 import classes from './SidebarItem.module.scss';
 import { useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
-import { useIntl } from 'react-intl';
 
 const SidebarItem = ({ children, to, icon }) => {
   const pathname = useSelector((state) => state.router.location.pathname);
@@ -12,8 +11,6 @@ const SidebarItem = ({ children, to, icon }) => {
   if (!!pathArr.find(el => `/${el}` === to) || pathname === to) {
     attachedClasses = [classes.DashItem, classes.active].join(' ');
   }
-  const { formatMessage } = useIntl();
-  const f = (id) => formatMessage({ id });
   return (
     <li className={attachedClasses}>
       {icon && <i className={icon}></i>}

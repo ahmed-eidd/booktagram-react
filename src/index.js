@@ -7,11 +7,11 @@ import { ChakraProvider, extendTheme } from '@chakra-ui/react';
 import * as locales from './content/locale/';
 import store, { history } from './service/configureStore';
 import { ConnectedRouter } from 'connected-react-router';
-import firebase from 'firebase/app';
 import { ReactReduxFirebaseProvider } from 'react-redux-firebase';
 import { createFirestoreInstance } from 'redux-firestore';
-import 'firebase/firestore';
+import firebase from 'firebase/app';
 import 'firebase/auth';
+import 'firebase/firestore';
 
 const language = navigator.language.split(/[-_]/)[0];
 
@@ -55,9 +55,7 @@ const rrfProps = {
 const theme = extendTheme({
   styles: {
     global: {
-      body: {
-
-      },
+      body: {},
     },
   },
   colors: {
@@ -70,7 +68,6 @@ ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
       <ConnectedRouter history={history}>
-        {/* <BrowserRouter> */}
         <ReactReduxFirebaseProvider {...rrfProps}>
           <ChakraProvider theme={theme}>
             <IntlProvider
@@ -83,7 +80,6 @@ ReactDOM.render(
             </IntlProvider>
           </ChakraProvider>
         </ReactReduxFirebaseProvider>{' '}
-        {/* </BrowserRouter> */}
       </ConnectedRouter>
     </Provider>
   </React.StrictMode>,

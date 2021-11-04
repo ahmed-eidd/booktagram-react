@@ -1,7 +1,5 @@
 import { useEffect } from 'react';
 
-import { useIntl } from 'react-intl';
-
 import { useDispatch } from 'react-redux';
 import { fetchNews } from '../store/news/slice';
 
@@ -14,8 +12,6 @@ export default function Home() {
     dispatch(fetchNews());
   }, [dispatch]);
 
-  const { formatMessage } = useIntl();
-  const f = (id) => formatMessage({ id });
   return (
     <>
       <Header />

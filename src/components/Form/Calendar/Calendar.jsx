@@ -1,4 +1,4 @@
-import React, { forwardRef, useState } from 'react';
+import React, { forwardRef } from 'react';
 import DatePicker from 'react-datepicker';
 import classes from './Calendar.module.scss';
 import 'react-datepicker/dist/react-datepicker.css';
@@ -6,7 +6,7 @@ import FormControl from '../FormControl/FormControl';
 import { useField, useFormikContext } from 'formik';
 
 const FormCalendar = ({ className, label, labelStyle, style, ...props }) => {
-  const [date, setDate] = useState(new Date());
+  // const [date, setDate] = useState(new Date());
 
   const CustomInput = forwardRef(({ value, onClick }, ref) => (
     <button

@@ -1,4 +1,4 @@
-import { Formik, useFormik } from 'formik';
+import { Formik } from 'formik';
 import React from 'react';
 import TextArea from '../../../../components/Form/TextArea/TextArea';
 import classes from './Discussion.module.scss';
@@ -19,12 +19,12 @@ const Discussion = () => {
           <FormGroup formClassName={classes.Discussion__WritePost}>
             <TextArea
               className={classes.Discussion__WritePost__Input}
-              name="post"
-              placeholder="Write a Post"
-              type="text"
+              name='post'
+              placeholder='Write a Post'
+              type='text'
             />
             <div className={classes.Discussion__WritePost__ActionBox}>
-              <Button type="submit">Post</Button>
+              <Button type='submit'>Post</Button>
             </div>
           </FormGroup>
         )}

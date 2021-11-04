@@ -20,7 +20,7 @@ const Questions = () => {
   });
   const onItemAdd = (values, setValue) => {
     console.log(values.singleQuestion)
-    if (values?.singleQuestion == '') {
+    if (values?.singleQuestion === '') {
       setError('Type something to add');
       return;
     }

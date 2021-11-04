@@ -13,7 +13,7 @@ import { takeLatest, put, call } from 'redux-saga/effects';
 import {loginUserSuccessAction,loginUserFailAction,logoutFailAction,logoutSuccessAction} from './action'
 import {actionTypes} from './actionTypes'
 import firebase from 'firebase';
-import Cookies from 'js-cookie';
+// import Cookies from 'js-cookie';
 import { toastFail, toastSuccess } from '../../utilities/Toast';
 import {push} from 'connected-react-router';
 

@@ -1,23 +1,29 @@
 import React from 'react';
 import ReactSelect from 'react-select';
-import classes from './Select.module.scss';
 import { useField } from 'formik';
 import { colors } from '../../../styles/abstract/colors';
 import FormControl from '../FormControl/FormControl';
 
-const Select = ({ label, labelStyle, placeholder, options,className, ...props }) => {
+const Select = ({
+  label,
+  labelStyle,
+  placeholder,
+  options,
+  className,
+  ...props
+}) => {
   const [field, { error, touched }, helpers] = useField(props);
   const { setValue } = helpers;
   const defaultValue = (options, value) => {
     return options ? options.find((option) => option.value === value) : '';
   };
 
-  const {grey,secondary,primary} = colors
+  const { grey, secondary } = colors;
   // styles
   const colourStyles = {
     control: (styles) => ({
       ...styles,
-      backgroundColor:secondary ,
+      backgroundColor: secondary,
       border: `2px solid ${grey}`,
       ':hover:': {
         ...styles[':hover:'],
@@ -26,11 +32,11 @@ const Select = ({ label, labelStyle, placeholder, options,className, ...props })
     }),
     dropdownIndicator: (styles) => ({ ...styles, color: grey }),
     indicatorSeparator: (styles) => ({ display: 'none' }),
-    menu: (styles) => ({ ...styles, backgroundColor:secondary }),
+    menu: (styles) => ({ ...styles, backgroundColor: secondary }),
     option: (styles, { data, isDisabled, isFocused, isSelected }) => ({
       ...styles,
       backgroundColor: isSelected && grey,
-      color: isSelected &&secondary,
+      color: isSelected && secondary,
       ':active': {
         ...styles[':active'],
         backgroundColor: grey,
@@ -38,7 +44,7 @@ const Select = ({ label, labelStyle, placeholder, options,className, ...props })
       },
       ':hover': {
         ...styles[':active'],
-        backgroundColor:grey,
+        backgroundColor: grey,
         color: secondary,
       },
     }),

@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import classes from './Post.module.scss';
 import Avatar from '../../../../../assests/avatar.jpg';
-import TextArea from '../../../../../components/Form/TextArea/TextArea';
 import Button from '../../../../../components/Button/Button';
-import { Formik, useFormik } from 'formik';
+// import { Formik, useFormik } from 'formik';
+import { Formik } from 'formik';
 import Comment from '../Comment/Comment';
 import FormGroup from '../../../../../components/Form/FormGroup/FormGroup';
 import InputField from '../../../../../components/Form/InputField/InputField';
@@ -13,27 +13,27 @@ const Post = () => {
   const onCommentClickHandler = () => {
     setCommentOpen(!commentOpen);
   };
-  const formik = useFormik({
-    initialValues: {
-      comment: '',
-    },
-    onSubmit: (values, { resetForm }) => {
-      console.log(values);
-      setTimeout(() => {
-        resetForm();
-      }, 1000);
-    },
-  });
+  // const formik = useFormik({
+  //   initialValues: {
+  //     comment: '',
+  //   },
+  //   onSubmit: (values, { resetForm }) => {
+  //     console.log(values);
+  //     setTimeout(() => {
+  //       resetForm();
+  //     }, 1000);
+  //   },
+  // });
 
-  const { values, handleChange, handleSubmit } = formik;
+  // const { values, handleChange, handleSubmit } = formik;
 
   return (
     <div className={classes.Post}>
       <div className={classes.Post__Img}>
-        <img src={Avatar} alt="avatar" />
+        <img src={Avatar} alt='avatar' />
       </div>
       <div className={classes.Post__Settings}>
-        <i className="fas fa-ellipsis-h"></i>
+        <i className='fas fa-ellipsis-h'></i>
       </div>
       <div className={classes.Post__User}>
         <p className={classes.Post__Name}>Ahmed Eid</p>
@@ -55,21 +55,24 @@ const Post = () => {
         </div>
       </div>
       <div className={classes.Post__CommentAvatar}>
-        <img src={Avatar} alt="avatar" />
+        <img src={Avatar} alt='avatar' />
       </div>
-      <Formik onSubmit={(values) => console.log(values)} initialValues={{
-        comment: ''
-      }}>
+      <Formik
+        onSubmit={(values) => console.log(values)}
+        initialValues={{
+          comment: '',
+        }}
+      >
         {() => (
           <FormGroup formClassName={classes.Post__WriteComment}>
             <InputField
-            style={{
-              width: '90%',
-            }}
-              placeholder="Write a Reply..."
-              name="comment"
+              style={{
+                width: '90%',
+              }}
+              placeholder='Write a Reply...'
+              name='comment'
             />
-            <Button type="submit">Reply</Button>
+            <Button type='submit'>Reply</Button>
           </FormGroup>
         )}
       </Formik>

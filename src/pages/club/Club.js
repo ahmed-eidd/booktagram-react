@@ -1,5 +1,5 @@
 import React from 'react';
-import classes from './Club.module.scss';
+// import classes from './Club.module.scss';
 import GroupCardPage from '../../components/Card/GroupCard/GroupCardPage';
 import TabPanel from '../../components/Tabs/TabPanel/TabPanel';
 import Tabs from '../../components/Tabs/Tabs';
